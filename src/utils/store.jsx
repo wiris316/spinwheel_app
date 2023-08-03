@@ -4,11 +4,14 @@ import {useState} from 'react';
 export const StoreContext = React.createContext(null);
 
 const StoreProvider = ({ children }) => {
-  const [data, setData] = useState([1])
+  const [parts, setParts] = useState([1])
+  const [data, setData] = useState([])
 
   return (
     <StoreContext.Provider
       value={{
+        parts,
+        setParts,
         data,
         setData
       }}

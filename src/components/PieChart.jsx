@@ -7,10 +7,11 @@ import { StoreContext } from '../utils/store.jsx'
 
 const PieChart = () => {
   
+  const {parts} = useContext(StoreContext)
   const {data} = useContext(StoreContext)
 
   useEffect(() => {    
-  }, [data])
+  }, [parts, data])
 
   return (
     <>
@@ -25,9 +26,9 @@ const PieChart = () => {
           maintainAspectRatio: false
         }}
         data={{
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: data,
         datasets: [{
-          data: data,
+          data: parts,
           backgroundColor:[
             '#4dc9f6',
             '#f67019',
