@@ -1,33 +1,29 @@
-import React, {useState, useContext, useEffect, useRef} from 'react';
-import { Chart, Pie } from 'react-chartjs-2';
+import React, {useState, useContext, useEffect} from 'react';
+import { Pie } from 'react-chartjs-2';
 import 'chart.js/auto'
 import Piechart from '../assets/Piechart.scss'
 import { StoreContext } from '../utils/store.jsx'
 
 
 const PieChart = () => {
-  const { data, setData } = useContext(StoreContext)
-  console.log('here', data)
-  const ref = useRef(data);
-  setData(data)
+  
+  const {data} = useContext(StoreContext)
 
-  useEffect(() => {
-    // ref.current = data.push(1)
-    console.log('in useeffect', data)
-  })
+  useEffect(() => {    
+  }, [data])
 
   return (
     <>
-      <Pie ref={ref} height="500%"
+      <Pie  height="500%"
         options={{ maintainAspectRatio: false }}
         data={{
-          // labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-          datasets: [{
-          // label: '# of Votes',
-          data: data,
-          // borderWidth: 1
-          }]
-    }} />
+        // labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+        data: data,
+        // label: '# of Votes',
+        // borderWidth: 1
+        }]
+        }} />
     </>
   )
 };

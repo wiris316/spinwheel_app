@@ -1,24 +1,25 @@
-import { useState } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import './App.css'
 import PieChart from './components/PieChart'
 import ToDoBox from './components/ToDoBox'
-import StoreProvider from './utils/store'
+import { StoreContext } from './utils/store'
 import { motion } from "framer-motion"
 
+
 function App() {
-  // const [count, setCount] = useState(0)
+  
+  const randomNum = Math.floor(Math.random() * (359 - 1))
   
 
   return (
     <>
-      <StoreProvider>
-        <ToDoBox/>
-        <motion.div
+      <ToDoBox />
+      <motion.div
           className="box"
           animate={{
           // scale: [1, 2, 2, 1, 1],
           // rotate: [0, 0, 180, 0, 0],
-            rotate:[0,0,180]
+            rotate: [0, 0, 180 ]
           // borderRadius: ["0%", "0%", "50%", "50%", "0%"]
           }}
           transition={{
@@ -28,10 +29,8 @@ function App() {
             // repeat: Infinity,
             // repeatDelay: 0
           }}>
-        <PieChart/>
-        </motion.div>
-
-      </StoreProvider>
+          <PieChart/>
+      </motion.div>
     </>
   )
 }
