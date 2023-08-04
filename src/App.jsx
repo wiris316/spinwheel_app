@@ -10,15 +10,15 @@ function App() {
   
   const randomNum = Math.floor(Math.random() * (2-1))
   const variants = {
-    rotate: { rotate: [0, 0, 0, 360, 0], transition: { repeat: Infinity, duration: 1 } },
+    rotate: { rotate: [0, 0, 5000, 0, 0], transition: { repeat: Infinity, duration: 0.2 } },
     stop: { rotate: [0, 0, 0], transition: { repeat: 0, repeatDelay: 0 } }
   };
   const [rotate, setRotate] = useState(false)
   const [spinButton, setSpinButton] = useState('spin')
 
   const handleSpin = () => {
-    let newRotate = !rotate
-    setRotate(newRotate);
+    // let newRotate = !rotate
+    setRotate(!rotate);
     spinButton === 'spin' ? setSpinButton('stop') : setSpinButton('spin')
   }
 
@@ -26,9 +26,12 @@ function App() {
   }, [rotate])
 
   return (
-    <div id="InputBox">
+    <>
       <InputBox />
-      <button id="spin-button" onClick={handleSpin} >{spinButton}</button>
+      <div id="InputBox">
+        <button id="spin-button" onClick={handleSpin} >{spinButton}</button>
+      </div>
+      {/* <img src="../assets/images.png"/> */}
       <motion.div
         className="box"
         variants ={variants}
@@ -47,7 +50,7 @@ function App() {
           }}>
           <PieChart/>
       </motion.div>
-    </div>
+    </>
   )
 }
 
