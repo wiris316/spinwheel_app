@@ -5,6 +5,7 @@ import InputBox from './components/InputBox'
 import Animation from './components/Animation'
 import { StoreContext } from './utils/store'
 import { motion } from "framer-motion"
+import redArrow from "./assets/redArrow.png"
 
 
 function App() {
@@ -18,8 +19,13 @@ function App() {
   const { rotate, setRotate, spinButton, setSpinButton } = useContext(StoreContext)
 
   const handleSpin = () => {
-    // let newRotate = !rotate
-    setRotate(!rotate);
+    // when users click 'stop', spin another 800 millisec before stop
+    if (spinButton === 'stop') {
+      setTimeout(()=>setRotate(!rotate), 800);
+    } else {
+      setRotate(!rotate);
+    }
+
     spinButton === 'spin' ? setSpinButton('stop') : setSpinButton('spin')
   }
 
@@ -29,12 +35,15 @@ function App() {
 
   return (
     <>
-      <InputBox />
-      <div id="InputBox">
-        <button id="spin-button" onClick={handleSpin} >{spinButton}</button>
-      </div>
-      {/* <img src="../assets/images.png"/> */}
-      <Animation/>
+      <main id="center">
+        <InputBox />
+        <div id="spin">
+          <button id="spin-button" onClick={handleSpin} >{spinButton}</button>
+        </div>
+        <img src={redArrow} alt="arrow"/>
+        <Animation/>
+
+      </main>
     </>
   )
 }

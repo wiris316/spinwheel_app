@@ -9,16 +9,25 @@ import { motion } from "framer-motion"
 function Animation() {
   
   const { rotate, setRotate, spinButton, setSpinButton } = useContext(StoreContext)
-  
+  const [tempDegree,setTempDegree] = useState(0)
+
   const randomNum = Math.floor(Math.random() * (360))
+  
+  let attributes = document.getElementById('Animation')
+
+  const captureDegree = async() => {
+    let rotationDegree = await attributes.getAttribute('style')
+    console.log('temp here', rotationDegree.split(' ')[1])
+  }
 
   const variants = {
     rotate: {
       rotate: [0, 360],
-      transition: { repeat: Infinity, duration: 1, ease: 'linear' }, // Adjust duration for smoother animation
+      transition: { repeat: Infinity, duration: 0.8, ease: 'linear' },
+      times: [5, 5, 0.5, 80, 80]// Adjust duration for smoother animation
     },
     stop: {
-      rotate: randomNum, 
+      rotate: tempDegree+300, 
       transition: {
         repeat: 0,
         ease: 'linear'
@@ -33,6 +42,8 @@ function Animation() {
   // }
 
   useEffect(() => {
+    let rotationDegree = captureDegree()
+    setTempDegree(captureDegree())
   }, [rotate])
 
   return (

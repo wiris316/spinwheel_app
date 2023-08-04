@@ -30,18 +30,18 @@ const PieChart = () => {
         datasets: [{
           data: parts,
           backgroundColor: [
-            // '#355070',
             '#75FAD2',
+            '#FBBDC8',
+            '#0AD3FF',
+            '#166a8f', //slate
+            '#537bc4', //blueish purple
+            // '#355070',
             // '#E56B6F',
             // '#E1FAF9',
-            '#FBBDC8',
-            '#0AD3FF'
             // '#4dc9f6', //aqua blue
             // '#f67019', //orange
             // '#f53794', //hot pink
-            // '#537bc4', //blueish purple
             // '#acc236', //lime green
-            // '#166a8f', //slate
             // '#00a950', //green
             // '#58595b', //gray
             // '#8549ba' //purple

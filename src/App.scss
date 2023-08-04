@@ -1,19 +1,48 @@
-#InputBox {
+html{
+  background-color: #023C40;
+}
+
+main {
+  border: solid;
+  border-radius: 70px;
+  border-width: 10px;
+  border-color: rgb(222, 211, 211);
+  padding-bottom: 0px;
+  width: 800px;
+  height: 800px;
+  margin: 50px auto;
+}
+
+#spin {
   display:grid;
   z-index: 2;
 
   #spin-button {
     position:fixed;
-    margin: 250px 0 20px 0;
+    margin: 240px 0 20px 0;
     justify-self: center;
     z-index: 2;
     font-size: 30px;
     padding: 20px;
     border-radius: 100px;
     border: solid 20px;
-    border-color: #0AD3FF;
+    border-color: #023C40;
     
   }
+}
+
+img {
+  height: 50px;
+  width: 40px;
+  // transform: rotate(-55deg);
+  position:fixed;
+  // justify-content: center;
+  // align-self: center;
+  // text-align: center;
+  // display:block;
+  // left:48%;
+  margin: 20px 0 0 370px;
+  z-index: 2;
 }
 
 canvas {
