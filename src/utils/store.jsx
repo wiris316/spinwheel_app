@@ -6,6 +6,8 @@ export const StoreContext = React.createContext(null);
 const StoreProvider = ({ children }) => {
   const [parts, setParts] = useState([1])
   const [data, setData] = useState([])
+  const [rotate, setRotate] = useState(false)
+  const [spinButton, setSpinButton] = useState('spin')
 
   return (
     <StoreContext.Provider
@@ -13,7 +15,11 @@ const StoreProvider = ({ children }) => {
         parts,
         setParts,
         data,
-        setData
+        setData,
+        rotate, 
+        setRotate,
+        spinButton,
+        setSpinButton
       }}
     >
       {children}
