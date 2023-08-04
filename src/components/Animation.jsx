@@ -2,6 +2,7 @@ import { useContext, useState, useEffect } from 'react';
 import PieChart from './PieChart'
 import InputBox from './InputBox'
 import { StoreContext } from '../utils/store'
+import '../assets/Animation.scss'
 import { motion } from "framer-motion"
 
 
@@ -9,10 +10,20 @@ function Animation() {
   
   const { rotate, setRotate, spinButton, setSpinButton } = useContext(StoreContext)
   
-  const randomNum = Math.floor(Math.random() * (2-1))
+  const randomNum = Math.floor(Math.random() * (360))
+
   const variants = {
-    rotate: { rotate: [0, 0, 5000, 0, 0], transition: { repeat: 1, duration: 0.2 } },
-    stop: { rotate: [0, 0, 0], transition: { repeat: 0, repeatDelay: 0 } }
+    rotate: {
+      rotate: [0, 360],
+      transition: { repeat: Infinity, duration: 1, ease: 'linear' }, // Adjust duration for smoother animation
+    },
+    stop: {
+      rotate: randomNum, 
+      transition: {
+        repeat: 0,
+        ease: 'linear'
+      }
+    }
   };
 
   // const handleSpin = () => {
@@ -35,13 +46,16 @@ function Animation() {
           rotate ? 'rotate' : 'stop'
           // borderRadius: ["0%", "0%", "50%", "50%", "0%"]
           }
-        transition={{
-          // duration: 1,
-          ease: "linear",
-          // times: [0, 0.2, 0.5, 0.8, 1],
-          // repeat: Infinity,
-          // repeatDelay: 0
-          }}>
+        // transition={{
+        //   duration: 2,
+        //   ease: "linear",
+        //   // repeat: Infinity, 
+        //   delay: 1,
+        //   // times: [0, 0.2, 0.5, 0.8, 1],
+        //   // repeat: Infinity,
+        //   // repeatDelay: 0
+      //   }}
+      >
           <PieChart/>
       </motion.div>
     </>

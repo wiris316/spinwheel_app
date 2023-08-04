@@ -29,16 +29,22 @@ const PieChart = () => {
         labels: data,
         datasets: [{
           data: parts,
-          backgroundColor:[
-            '#4dc9f6',
-            '#f67019',
-            '#f53794',
-            '#537bc4',
-            '#acc236',
-            '#166a8f',
-            '#00a950',
-            '#58595b',
-            '#8549ba'
+          backgroundColor: [
+            // '#355070',
+            '#75FAD2',
+            // '#E56B6F',
+            // '#E1FAF9',
+            '#FBBDC8',
+            '#0AD3FF'
+            // '#4dc9f6', //aqua blue
+            // '#f67019', //orange
+            // '#f53794', //hot pink
+            // '#537bc4', //blueish purple
+            // '#acc236', //lime green
+            // '#166a8f', //slate
+            // '#00a950', //green
+            // '#58595b', //gray
+            // '#8549ba' //purple
           ]
         // label: '# of Votes',
         // borderWidth: 1

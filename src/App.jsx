@@ -24,6 +24,7 @@ function App() {
   }
 
   useEffect(() => {
+    console.log('rendered')
   }, [rotate])
 
   return (
