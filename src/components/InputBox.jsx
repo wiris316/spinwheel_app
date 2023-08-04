@@ -1,16 +1,16 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { StoreContext } from '../utils/store';
+import '../assets/InputBox.scss'
 
 
-export default function ToDoBox() {
+export default function InputBox() {
 
   const { parts, setParts } = useContext(StoreContext)
   const { data, setData } = useContext(StoreContext)
-  let input; 
+  const [input, setInput] = useState('')
   
   const handleInput = (e) => {
-    input = e.target.value;
-    
+    setInput(e.target.value)
   }
 
   const handleSubmit = (e) => {
@@ -18,8 +18,8 @@ export default function ToDoBox() {
     const newParts = [...parts, 1]
     setParts(newParts)
     const newData = [...data, input]
-    setData(newData)
-    e.target.value = ''
+    setData(newData);
+    setInput('')
   }
 
   
@@ -27,7 +27,7 @@ export default function ToDoBox() {
     <>
       <form>
         <label htmlFor="ToDoBox" >Add to list: </label>
-        <input name="ToDoBox" type='text' placeholder='' onChange={handleInput}></input>
+        <input name="ToDoBox" type='text' placeholder='' onChange={handleInput} value={input}></input>
         <button name="ToDoBox" onClick={handleSubmit} >Submit</button>
 
       </form>

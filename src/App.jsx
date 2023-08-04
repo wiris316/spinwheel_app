@@ -1,7 +1,7 @@
 import { useContext, useState, useEffect } from 'react'
-import './App.css'
+import './App.scss'
 import PieChart from './components/PieChart'
-import ToDoBox from './components/ToDoBox'
+import InputBox from './components/InputBox'
 import { StoreContext } from './utils/store'
 import { motion } from "framer-motion"
 
@@ -23,9 +23,9 @@ function App() {
   }, [rotate])
 
   return (
-    <>
-      <ToDoBox />
-      <button onClick={handleSpin}>spin</button>
+    <div id="InputBox">
+      <InputBox />
+      <button id="spin-button" onClick={handleSpin}>spin</button>
       <motion.div
         className="box"
         variants ={variants}
@@ -44,7 +44,7 @@ function App() {
           }}>
           <PieChart/>
       </motion.div>
-    </>
+    </div>
   )
 }
 
