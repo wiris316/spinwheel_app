@@ -26,7 +26,7 @@ export default function InputBox() {
   return (
     <>
       <form>
-        <label htmlFor="ToDoBox" >Add to list: </label>
+        <label htmlFor="ToDoBox" >Add to list:</label>
         <input name="ToDoBox" type='text' placeholder='' onChange={handleInput} value={input}></input>
         <button name="ToDoBox" onClick={handleSubmit} >Submit</button>
 
