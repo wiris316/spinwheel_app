@@ -18,7 +18,7 @@ main {
   z-index: 2;
 
   #spin-button {
-    position:fixed;
+    position:absolute;
     margin: 240px 0 20px 0;
     justify-self: center;
     z-index: 2;
@@ -31,18 +31,33 @@ main {
   }
 }
 
-img {
-  height: 50px;
-  width: 40px;
-  // transform: rotate(-55deg);
-  position:fixed;
+
+
+#arrow-button {
+  position:absolute;
   // justify-content: center;
   // align-self: center;
   // text-align: center;
   // display:block;
   // left:48%;
-  margin: 20px 0 0 370px;
+  margin: 70px 0 0 390px;
+  background-color: transparent;
   z-index: 2;
+  
+  img {
+    height: 50px;
+    width: 40px;
+    // transform: rotate(-55deg);
+    position:absolute;
+    // justify-content: center;
+    // align-self: center;
+    // text-align: center;
+    // display:block;
+    // left:48%;
+    // margin: 20px 0 0 380px;
+    margin: -50px 0 0 -20px;
+    z-index: 2;
+  }
 }
 
 canvas {
