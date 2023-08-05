@@ -19,14 +19,35 @@ function App() {
   const { rotate, setRotate, spinButton, setSpinButton } = useContext(StoreContext)
 
   const handleSpin = () => {
+
     // when users click 'stop', spin another 800 millisec before stop
-    if (spinButton === 'stop') {
-      setTimeout(()=>setRotate(!rotate), 800);
+    
+    let tempSpinButton = document.getElementById('spin-button')
+
+    if (spinButton === 'stopping') {
+      setTimeout(() => {
+        setRotate(!rotate)
+        setSpinButton('spin')
+        tempSpinButton.style.color = 'black'
+      }, 800);
+
+    } else if (spinButton === 'stop'){
+
+      setSpinButton('stopping')
+      tempSpinButton.style.color = 'red'
+      
+      setTimeout(() => {
+        setRotate(!rotate)
+        setSpinButton('spin')
+        tempSpinButton.style.color = 'black'
+      }, 800);
+      
     } else {
+      setSpinButton('stop')
       setRotate(!rotate);
     }
 
-    spinButton === 'spin' ? setSpinButton('stop') : setSpinButton('spin')
+    // spinButton === 'spin' ? setSpinButton('stop') : setSpinButton('spin')
   }
 
   useEffect(() => {
