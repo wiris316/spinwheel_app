@@ -15,8 +15,32 @@ ChartJS.register(
 
 const PieChart = () => {
   
-  const {parts, data, arrowClick} = useContext(StoreContext)
+  const {parts} = useContext(StoreContext)
+  const { data } = useContext(StoreContext)
   const [spun, setSpun] = useState(false)
+
+
+  // ///////////////////////////
+  // const [mousePos, setMousePos] = useState({});
+
+  // useEffect(() => {
+  //   const handleMouseMove = (event) => {
+  //     setMousePos({ x: event.clientX, y: event.clientY });
+  //   };
+
+  //   window.addEventListener('mousemove', handleMouseMove);
+
+  //   return () => {
+  //     window.removeEventListener(
+  //       'mousemove',
+  //       handleMouseMove
+  //     );
+
+  //   };
+  // }, []);
+  // /////////////////////////////
+  
+  // console.log(mousePos.x, mousePos.y)
 
   
   const chartData={
@@ -52,8 +76,8 @@ const PieChart = () => {
 
   const chartRef = useRef();
   const onClick = (event) => {
-    
-    if (getElementsAtEvent(chartRef.current, event).length > 0) {
+
+    // if (getElementsAtEvent(chartRef.current, event).length > 0) {
       console.log('arceleement', getElementsAtEvent(chartRef.current, event))
       const datasetIndexNum = getElementsAtEvent(chartRef.current, event)[0].datasetIndex
       const dataPoint = getElementsAtEvent(chartRef.current, event)[0].index
@@ -61,15 +85,17 @@ const PieChart = () => {
       console.log('datasetIndexNum', datasetIndexNum)
       console.log('dataPoint', dataPoint)
       console.log('which animal', chartData.labels[dataPoint])
-    }
+    // }
+    console.log('slicecliccked')
   }
-
+  
   // useEffect(() => {    
   // }, [parts, data])
 
   return (
     <>
       <Pie
+        id="Pie"
         height="500%"
         options={{
           responsive:true,

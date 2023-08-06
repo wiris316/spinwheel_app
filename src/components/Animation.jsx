@@ -11,7 +11,7 @@ function Animation() {
   const { rotate, setRotate, spinButton, setSpinButton } = useContext(StoreContext)
   const [tempDegree,setTempDegree] = useState(0)
 
-  const randomNum = Math.floor(Math.random() * (360))
+  const randomNum = Math.floor(Math.random() * (360)+1)
   
   // let attributes = document.getElementById('Animation')
 
@@ -27,7 +27,7 @@ function Animation() {
       // times: [5, 5, 0.5, 80, 80]// Adjust duration for smoother animation
     },
     stop: {
-      rotate: /*tempDegree*/0, 
+      rotate: /*tempDegree*/randomNum, 
       transition: {
         repeat: 0,
         ease: 'linear'

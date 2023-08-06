@@ -25,8 +25,9 @@ function App() {
         setRotate(!rotate)
         setSpinButton('spin')
         tempSpinButton.style.color = 'black'
-        arrowClick.click();
-      }, 800);
+        // arrowClick.click();
+        // document.elementFromPoint(536, 71).click();
+      }, 500);
 
     } else if (spinButton === 'stop'){
 
@@ -37,7 +38,8 @@ function App() {
         setRotate(!rotate)
         setSpinButton('spin')
         tempSpinButton.style.color = 'black'
-      }, 800);
+        document.elementFromPoint(548, 272).click();
+      }, 500);
 
     } else {
       setSpinButton('stop')
@@ -49,8 +51,20 @@ function App() {
   }
 
   useEffect(() => {
-    console.log('rendered')
+    // const arrowButton= document.getElementById('arrow-button');
+
+    // arrowButton.addEventListener("click", getClickPosition, false);
+
   }, [rotate])
+
+
+
+function getClickPosition(e) {
+  var xPosition = e.clientX;
+  var yPosition = e.clientY;
+
+  console.log(xPosition, yPosition)
+}
 
   return (
     <>
@@ -60,7 +74,7 @@ function App() {
           <button id="spin-button" onClick={handleSpin} >{spinButton}</button>
         </div>
 
-        <button id="arrow-button" ref={arrowClick}>
+        <button id="arrow-button" ref={arrowClick} onClick={getClickPosition}>
           <img src={redArrow} alt="arrow"/>
         </button>
 

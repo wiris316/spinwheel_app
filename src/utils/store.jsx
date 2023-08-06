@@ -1,14 +1,13 @@
 import React from 'react';
-import {useState, useRef} from 'react';
+import {useState} from 'react';
 
 export const StoreContext = React.createContext(null);
 
 const StoreProvider = ({ children }) => {
   const [parts, setParts] = useState([1])
   const [data, setData] = useState([])
-  const [result, setResult] = useState('')
+  const [result, setResult] = useState([])
   const [rotate, setRotate] = useState(false)
-  const arrowClick = useRef()
   const [spinButton, setSpinButton] = useState('spin')
 
   return (
@@ -18,13 +17,12 @@ const StoreProvider = ({ children }) => {
         setParts,
         data,
         setData,
-        result, 
+        result,
         setResult,
         rotate, 
         setRotate,
         spinButton,
-        setSpinButton,
-        arrowClick
+        setSpinButton
       }}
     >
       {children}
