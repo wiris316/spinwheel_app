@@ -21,6 +21,7 @@ function Animation() {
       let degree = rotationDegree.split(' ')[1]
       degree = degree.replace(/[^0-9.]/gi,'')
       
+      console.log('degree',degree)
       return degree
     }
   }
@@ -28,6 +29,7 @@ function Animation() {
   const variants = {
     rotate: {
       rotate: [0, 360],
+      scale: [1,0.98,1],
       transition: { repeat: Infinity, duration: 0.8, ease: 'linear' },
       // times: [5, 5, 0.5, 80, 80]// Adjust duration for smoother animation
     },
@@ -36,18 +38,14 @@ function Animation() {
       transition: {
         repeat: 0,
         ease: 'linear'
-      }
+      }, 
+      // scale: 1,
     }
   };
 
-  // const handleSpin = () => {
-  //   // let newRotate = !rotate
-  //   setRotate(!rotate);
-  //   spinButton === 'spin' ? setSpinButton('stop') : setSpinButton('spin')
-  // }
 
   useEffect(() => {
-    let rotationDegree = captureDegree()
+    let rotationDegree = Math.floor(captureDegree())
     setTempDegree(rotationDegree)
   }, [rotate])
 
@@ -61,16 +59,7 @@ function Animation() {
           // rotate: [0, 0, 180, 0, 0],
           rotate ? 'rotate' : 'stop'
           // borderRadius: ["0%", "0%", "50%", "50%", "0%"]
-          }
-        // transition={{
-        //   duration: 2,
-        //   ease: "linear",
-        //   // repeat: Infinity, 
-        //   delay: 1,
-        //   // times: [0, 0.2, 0.5, 0.8, 1],
-        //   // repeat: Infinity,
-        //   // repeatDelay: 0
-      //   }}
+        }
       >
           <PieChart/>
       </motion.div>

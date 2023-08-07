@@ -3,9 +3,13 @@ import { StoreContext } from '../utils/store';
 import '../assets/ResultBox.scss'
 
 function ResultBox() {
+  
+  const {result} = useContext(StoreContext)
+
   return (
+    
     <>
-      <p>WEEEE</p>
+      <div id="result-box">{result}</div>
     </>
   )
 }

@@ -2,6 +2,7 @@ import { useContext, useState, useEffect } from 'react'
 import './App.scss'
 import PieChart from './components/PieChart'
 import InputBox from './components/InputBox'
+import ResultBox from './components/ResultBox'
 import Animation from './components/Animation'
 import { StoreContext } from './utils/store'
 import { motion } from "framer-motion"
@@ -35,20 +36,21 @@ function App() {
       
       setSpinButton(' . . . . ')
       
-      setTimeout(() => {
+      // setTimeout(() => {
         setRotate(!rotate)
         setSpinButton('spin')
         tempSpinButton.style.color = 'black'
 
         setFinishSpin(true)
 
-      }, 500);
+      // }, 500);
       
     } else {
       setSpinButton('stop')
       tempSpinButton.style.color = 'red'
       setRotate(!rotate);
-
+      
+      setFinishSpin(!finishSpin)
     }
     
   
@@ -63,12 +65,12 @@ function App() {
       const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
     
       const pixelX = (50/ 100) * viewportWidth;
-      const pixelY = (32/ 100) * viewportHeight;
+      const pixelY = (30/ 100) * viewportHeight;
       console.log(pixelX, pixelY)
     
-      setTimeout(() => document.elementFromPoint(pixelX, pixelY).click(), 2000)
+      document.elementFromPoint(pixelX, pixelY).click()
       
-      setFinishSpin(false)
+      // setFinishSpin(false)
       
     }
 
@@ -97,7 +99,7 @@ function getClickPosition(e) {
         </button>
 
         <Animation/>
-
+        {finishSpin && <ResultBox />}
       </main>
     </>
   )

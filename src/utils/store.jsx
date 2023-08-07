@@ -4,9 +4,9 @@ import {useState} from 'react';
 export const StoreContext = React.createContext(null);
 
 const StoreProvider = ({ children }) => {
-  const [parts, setParts] = useState([1])
+  const [parts, setParts] = useState([])
   const [data, setData] = useState([])
-  const [result, setResult] = useState([])
+  const [result, setResult] = useState('')
   const [rotate, setRotate] = useState(false)
   const [spinButton, setSpinButton] = useState('spin')
 

@@ -15,8 +15,7 @@ ChartJS.register(
 
 const PieChart = () => {
   
-  const {parts} = useContext(StoreContext)
-  const { data } = useContext(StoreContext)
+  const {parts, data, result, setResult} = useContext(StoreContext)
   const [spun, setSpun] = useState(false)
 
 
@@ -42,11 +41,12 @@ const PieChart = () => {
   
   // console.log(mousePos.x, mousePos.y)
 
+
   
   const chartData={
-    labels: data,
+    labels: ['cat','dog','mouse','bird','rabbit'],
     datasets: [{
-      data: parts,
+      data: [1,1,1,1,1],
       // label:"slices",
       backgroundColor: [
         // '#75FAD2', //mint
@@ -77,8 +77,12 @@ const PieChart = () => {
   const chartRef = useRef();
   const onClick = (event) => {
 
-    console.log('this is the event', event)
-    console.log('chartRef.current', chartRef.current.tooltip.title[0])
+    if (chartRef.current !== undefined) {
+      // console.log('this is the event', event)
+      // console.log('chartRef.current', chartRef.current.tooltip.title[0])
+      // console.log('result here',chartRef.current.tooltip.title[0])
+      setResult(chartRef.current.tooltip.title[0])
+    }
     // if (getElementsAtEvent(chartRef.current, event).length > 0) {
     //   console.log('arceleement', getElementsAtEvent(chartRef.current, event))
     //   const datasetIndexNum = getElementsAtEvent(chartRef.current, event)[0].datasetIndex
@@ -92,8 +96,6 @@ const PieChart = () => {
     // console.log(getElementsAtEvent(chartRef.current, event))
   }
   
-  // useEffect(() => {    
-  // }, [parts, data])
 
   return (
     <>
@@ -120,7 +122,7 @@ const PieChart = () => {
           maintainAspectRatio: false
         }}
         data = {chartData}
-        onClick={onClick}
+        onClick={()=>onClick()}
         ref = {chartRef}
         plugins={{ ChartDataLabels }}
       />
