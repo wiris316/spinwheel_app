@@ -13,6 +13,7 @@ function App() {
   const randomNum = Math.floor(Math.random() * (2-1))
 
   const { rotate, setRotate, spinButton, setSpinButton, arrowClick } = useContext(StoreContext)
+  const [finishSpin, setFinishSpin] = useState(false)
 
   const handleSpin = () => {
 
@@ -20,42 +21,59 @@ function App() {
     
     let tempSpinButton = document.getElementById('spin-button')
 
-    if (spinButton === ' . . . . . ') {
-      setTimeout(() => {
-        setRotate(!rotate)
-        setSpinButton('spin')
-        tempSpinButton.style.color = 'black'
-        // arrowClick.click();
-        // document.elementFromPoint(536, 71).click();
-      }, 500);
-
-    } else if (spinButton === 'stop'){
-
+    // if (spinButton === ' . . . . . ') {
+    //   setTimeout(() => {
+    //     setRotate(!rotate)
+    //     setSpinButton('spin')
+    //     tempSpinButton.style.color = 'black'
+    //     // arrowClick.click();
+    //     // document.elementFromPoint(536, 91).click();
+        
+    //   }, 0);
+      
+    if (spinButton === 'stop'){
+      
       setSpinButton(' . . . . ')
-      tempSpinButton.style.color = 'red'
       
       setTimeout(() => {
         setRotate(!rotate)
         setSpinButton('spin')
         tempSpinButton.style.color = 'black'
-        document.elementFromPoint(548, 272).click();
-      }, 500);
 
+        setFinishSpin(true)
+
+      }, 500);
+      
     } else {
       setSpinButton('stop')
       tempSpinButton.style.color = 'red'
       setRotate(!rotate);
-    }
 
+    }
+    
+  
+    // document.elementFromPoint(423, 300).click();
     // spinButton === 'spin' ? setSpinButton('stop') : setSpinButton('spin')
   }
-
+  
   useEffect(() => {
-    // const arrowButton= document.getElementById('arrow-button');
+    
+    if (finishSpin) {
+      const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+      const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+    
+      const pixelX = (50/ 100) * viewportWidth;
+      const pixelY = (32/ 100) * viewportHeight;
+      console.log(pixelX, pixelY)
+    
+      setTimeout(() => document.elementFromPoint(pixelX, pixelY).click(), 2000)
+      
+      setFinishSpin(false)
+      
+    }
 
-    // arrowButton.addEventListener("click", getClickPosition, false);
 
-  }, [rotate])
+  }, [finishSpin])
 
 
 

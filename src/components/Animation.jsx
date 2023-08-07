@@ -13,12 +13,17 @@ function Animation() {
 
   const randomNum = Math.floor(Math.random() * (360)+1)
   
-  // let attributes = document.getElementById('Animation')
+  let attributes = document.getElementById('Animation')
 
-  // const captureDegree = async() => {
-  //   let rotationDegree = await attributes.getAttribute('style')
-  //   console.log('temp here', rotationDegree.split(' ')[1])
-  // }
+  const captureDegree = () => {
+    if (attributes !== null) {
+      let rotationDegree = attributes.getAttribute('style')
+      let degree = rotationDegree.split(' ')[1]
+      degree = degree.replace(/[^0-9.]/gi,'')
+      
+      return degree
+    }
+  }
 
   const variants = {
     rotate: {
@@ -27,7 +32,7 @@ function Animation() {
       // times: [5, 5, 0.5, 80, 80]// Adjust duration for smoother animation
     },
     stop: {
-      rotate: /*tempDegree*/randomNum, 
+      rotate: tempDegree, 
       transition: {
         repeat: 0,
         ease: 'linear'
@@ -42,8 +47,8 @@ function Animation() {
   // }
 
   useEffect(() => {
-    // let rotationDegree = captureDegree()
-    // setTempDegree(captureDegree())
+    let rotationDegree = captureDegree()
+    setTempDegree(rotationDegree)
   }, [rotate])
 
   return (

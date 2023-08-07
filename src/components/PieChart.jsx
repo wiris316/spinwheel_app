@@ -49,18 +49,18 @@ const PieChart = () => {
       data: parts,
       // label:"slices",
       backgroundColor: [
-        '#75FAD2',
-        '#FBBDC8',
-        '#0AD3FF',
-        '#166a8f', //slate
+        // '#75FAD2', //mint
+        // '#FBBDC8', //pink
+        // '#0AD3FF', //aqua blue
+        '#acc236', //lime green
+        '#166a8f', // blueish slate
+        '#355070', //slate
         '#537bc4', //blueish purple
-        // '#355070',
-        // '#E56B6F',
-        // '#E1FAF9',
-        // '#4dc9f6', //aqua blue
+        '#E56B6F', //orange-red
+        // '#E1FAF9', //white
+        '#4dc9f6', //icy blue
         // '#f67019', //orange
         // '#f53794', //hot pink
-        // '#acc236', //lime green
         // '#00a950', //green
         // '#58595b', //gray
         // '#8549ba' //purple
@@ -77,16 +77,19 @@ const PieChart = () => {
   const chartRef = useRef();
   const onClick = (event) => {
 
+    console.log('this is the event', event)
+    console.log('chartRef.current', chartRef.current.tooltip.title[0])
     // if (getElementsAtEvent(chartRef.current, event).length > 0) {
-      console.log('arceleement', getElementsAtEvent(chartRef.current, event))
-      const datasetIndexNum = getElementsAtEvent(chartRef.current, event)[0].datasetIndex
-      const dataPoint = getElementsAtEvent(chartRef.current, event)[0].index
+    //   console.log('arceleement', getElementsAtEvent(chartRef.current, event))
+    //   const datasetIndexNum = getElementsAtEvent(chartRef.current, event)[0].datasetIndex
+    //   const dataPoint = getElementsAtEvent(chartRef.current, event)[0].index
       
-      console.log('datasetIndexNum', datasetIndexNum)
-      console.log('dataPoint', dataPoint)
-      console.log('which animal', chartData.labels[dataPoint])
+      // console.log('datasetIndexNum', datasetIndexNum)
+      // console.log('dataPoint', dataPoint)
+      // console.log('which animal', chartData.labels[dataPoint])
     // }
-    console.log('slicecliccked')
+    // console.log('slicecliccked')
+    // console.log(getElementsAtEvent(chartRef.current, event))
   }
   
   // useEffect(() => {    
