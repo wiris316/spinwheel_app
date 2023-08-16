@@ -19,27 +19,13 @@ const PieChart = () => {
   const [spun, setSpun] = useState(false)
 
 
-  // ///////////////////////////
-  // const [mousePos, setMousePos] = useState({});
-
-  // useEffect(() => {
-  //   const handleMouseMove = (event) => {
-  //     setMousePos({ x: event.clientX, y: event.clientY });
-  //   };
-
-  //   window.addEventListener('mousemove', handleMouseMove);
-
-  //   return () => {
-  //     window.removeEventListener(
-  //       'mousemove',
-  //       handleMouseMove
-  //     );
-
-  //   };
-  // }, []);
-  // /////////////////////////////
-  
-  // console.log(mousePos.x, mousePos.y)
+  console.log('cchartdatalabels', ChartDataLabels.defaults)
+  // ChartDataLabels.defaults.rotation = '25'
+  ChartDataLabels.defaults.align = 'end'
+  ChartDataLabels.defaults.clamp = true
+  ChartDataLabels.defaults.offset = 0
+  // ChartDataLabels.defaults.orientation = 'vertical'
+  // ChartDataLabels.defaults.anchor = 'beginning'
 
 
   
@@ -71,9 +57,6 @@ const PieChart = () => {
     }]
   }
 
-  // const options = {
-
-  // }
 
   const chartRef = useRef();
   const onClick = (event) => {
@@ -82,7 +65,7 @@ const PieChart = () => {
       // console.log('this is the event', event)
       // console.log('chartRef.current', chartRef.current.tooltip.title[0])
       // console.log('result here',chartRef.current.tooltip.title[0])
-      // setResult(chartRef.current.tooltip.title[0])
+      setResult(chartRef.current.tooltip.title[0])
 
 
       const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
@@ -116,34 +99,31 @@ const PieChart = () => {
         id="Pie"
         height="500%"
         options={{
-          tooltipTemplate: "<%= value %>",
-          showTooltips: true,
-          onAnimationComplete: function() {
-          this.showTooltip(this.datasets[0].points, true);
-          },
-          tooltipEvents: [],
-          responsive:true,
           plugins: {
             datalabels: {
-              // color: 'white',
-              formatter: ((context, args)=> {
+              formatter: ((value, context)=> {
                 // return context.chart.data.labels[context.dataIndex];
-                const index = args.dataIndex;
-                return args.chart.data.labels[index];
+                // const index = args.dataIndex;
+                return chartData.labels[context.dataIndex]
+                // return args.chart.data.labels[index];
                 // console.log('context hurrr', args)
               }),
               // display: 'auto',
+              color: 'white',
+              font: {
+                size: '25px'
+              },
             },
             legend: {
               display: false
             }
           },
-          maintainAspectRatio: false
+          // maintainAspectRatio: false
         }}
         data = {chartData}
         onClick={onClick}
         ref = {chartRef}
-        plugins={{ ChartDataLabels }}
+        plugins={[ ChartDataLabels ]}
       />
       
     </>
@@ -151,3 +131,4 @@ const PieChart = () => {
 };
 
 export default PieChart;
+
