@@ -8,7 +8,7 @@ import { motion } from "framer-motion"
 
 function Animation() {
   
-  const { rotate, setRotate, spinButton, setSpinButton, result, setResult } = useContext(StoreContext)
+  const { rotate } = useContext(StoreContext)
   const [tempDegree,setTempDegree] = useState(0)
 
   const randomNum = Math.floor(Math.random() * (360)+1)

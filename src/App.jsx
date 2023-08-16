@@ -21,16 +21,6 @@ function App() {
     // when users click 'stop', spin another 800 millisec before stop
     
     let tempSpinButton = document.getElementById('spin-button')
-
-    // if (spinButton === ' . . . . . ') {
-    //   setTimeout(() => {
-    //     setRotate(!rotate)
-    //     setSpinButton('spin')
-    //     tempSpinButton.style.color = 'black'
-    //     // arrowClick.click();
-    //     // document.elementFromPoint(536, 91).click();
-        
-    //   }, 0);
       
     if (spinButton === 'stop'){
       
@@ -69,8 +59,6 @@ function App() {
       console.log(pixelX, pixelY)
     
       document.elementFromPoint(pixelX, pixelY).click()
-      
-      // setFinishSpin(false)
       
     }
 
