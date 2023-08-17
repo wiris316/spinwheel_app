@@ -19,31 +19,31 @@ const PieChart = () => {
   const [spun, setSpun] = useState(false)
 
 
-  console.log('cchartdatalabels', ChartDataLabels.defaults)
-  // ChartDataLabels.defaults.rotation = '25'
-  ChartDataLabels.defaults.align = 'end'
-  ChartDataLabels.defaults.clamp = true
-  ChartDataLabels.defaults.offset = 0
+  // console.log('cchartdatalabels', ChartDataLabels.defaults)
+  // // ChartDataLabels.defaults.rotation = '25'
+  // ChartDataLabels.defaults.align = 'end'
+  // ChartDataLabels.defaults.clamp = true
+  // ChartDataLabels.defaults.offset = 0
   // ChartDataLabels.defaults.orientation = 'vertical'
   // ChartDataLabels.defaults.anchor = 'beginning'
 
 
   
   const chartData={
-    labels: ['cat','dog','mouse','bird','rabbit'],
+    labels: data,
     datasets: [{
-      data: [1,1,1,1,1],
+      data: parts,
       // label:"slices",
       
       backgroundColor: [
         // '#75FAD2', //mint
-        // '#FBBDC8', //pink
-        // '#0AD3FF', //aqua blue
-        '#acc236', //lime green
+        '#E56B6F', //orange-red
         '#166a8f', // blueish slate
+        '#acc236', //lime green
+        '#FBBDC8', //pink
+        // '#0AD3FF', //aqua blue
         '#355070', //slate
         '#537bc4', //blueish purple
-        '#E56B6F', //orange-red
         // '#E1FAF9', //white
         '#4dc9f6', //icy blue
         // '#f67019', //orange
@@ -51,21 +51,22 @@ const PieChart = () => {
         // '#00a950', //green
         // '#58595b', //gray
         // '#8549ba' //purple
-      ]
+      ],
     // label: '# of Votes',
-    // borderWidth: 1
+    borderWidth: 2
     }]
   }
 
 
   const chartRef = useRef();
   const onClick = (event) => {
-
+    setResult('')
+    setSpun(false)
     if (chartRef.current !== undefined) {
       // console.log('this is the event', event)
       // console.log('chartRef.current', chartRef.current.tooltip.title[0])
       // console.log('result here',chartRef.current.tooltip.title[0])
-      setResult(chartRef.current.tooltip.title[0])
+      // setResult(chartRef.current.tooltip.title[0])
 
 
       const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
@@ -102,13 +103,8 @@ const PieChart = () => {
           plugins: {
             datalabels: {
               formatter: ((value, context)=> {
-                // return context.chart.data.labels[context.dataIndex];
-                // const index = args.dataIndex;
                 return chartData.labels[context.dataIndex]
-                // return args.chart.data.labels[index];
-                // console.log('context hurrr', args)
               }),
-              // display: 'auto',
               color: 'white',
               font: {
                 size: '25px'

@@ -15,18 +15,20 @@ export default function InputBox() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    const newParts = [...parts, 1]
-    setParts(newParts)
-    const newData = [...data, input]
-    setData(newData);
-    setInput('')
+    if (input.length > 0) {
+      const newParts = [...parts, 1]
+      setParts(newParts)
+      const newData = [...data, input]
+      setData(newData);
+      setInput('')
+    } 
   }
 
   
   return (
     <>
       <form>
-        <input name="ToDoBox" type='text' placeholder='' onChange={handleInput} value={input}></input>
+        <input name="ToDoBox" type='text' maxLength={8} placeholder='' onChange={handleInput} value={input}></input>
         <button name="ToDoBox" onClick={handleSubmit} >Submit</button>
 
       </form>
