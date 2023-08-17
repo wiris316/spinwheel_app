@@ -1,7 +1,10 @@
+$fontColor: rgb(108, 105, 147);
+
 p {
   font-size: 30px;
   font-family: arial;
-  color: white;
+  // color: white;
+  color: $fontColor;
   display:flex;
   justify-content: center;
   margin-top: 50px;

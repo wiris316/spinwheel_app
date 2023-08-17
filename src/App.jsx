@@ -20,7 +20,7 @@ function App() {
 
   const handleSpin = () => {
 
-    // when users click 'stop', spin another 800 millisec before stop
+    // when users click 'stop', spin another 1000 millisec before stop
     
     if (data.length > 1) {
   
@@ -33,7 +33,7 @@ function App() {
         setTimeout(() => {
           setRotate(!rotate)
           setSpinButton('spin')
-          tempSpinButton.style.color = 'black'
+          tempSpinButton.style.color = 'rgb(108, 105, 147)'
   
           setFinishSpin(true)
   

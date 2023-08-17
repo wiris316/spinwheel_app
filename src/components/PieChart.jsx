@@ -36,10 +36,11 @@ const PieChart = () => {
       // label:"slices",
       
       backgroundColor: [
-        // '#75FAD2', //mint
-        '#E56B6F', //orange-red
+        // '#E56B6F', //orange-red
+        '#f39396',
         '#166a8f', // blueish slate
         '#acc236', //lime green
+        '#75FAD2', //mint
         '#FBBDC8', //pink
         // '#0AD3FF', //aqua blue
         '#355070', //slate

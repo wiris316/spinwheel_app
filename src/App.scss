@@ -1,5 +1,10 @@
+// $bgColor: #023C40;
+$bgColor: #9bbdf9bd;
+$fontColor: rgb(108, 105, 147);
+$pieSlice:#f39396; //orange-red;
+
 html{
-  background-color: #023C40;
+  background-color: $bgColor
   // background-color: rgba(0, 0, 0, 0.889);
 }
 
@@ -7,7 +12,8 @@ main {
   border: solid;
   border-radius: 70px;
   border-width: 10px;
-  border-color: rgb(222, 211, 211);
+  // border-color: rgb(222, 211, 211);
+  border-color: $fontColor;
   padding-bottom: 0px;
   width: 800px;
   height: 800px;
@@ -18,10 +24,11 @@ main {
 #spin {
   display:grid;
   z-index: 2;
+  // color: $fontColor;
 
   #spin-button {
     position:absolute;
-    margin: 245px 0 20px 0;
+    margin: 240px 0 20px 0;
     justify-self: center;
     z-index: 2;
     font-size: 30px;
@@ -29,8 +36,8 @@ main {
     padding: 20px;
     border-radius: 100px;
     border: solid 20px;
-    border-color: #023C40;
-    
+    border-color: $bgColor;
+    color: $fontColor;
   }
 }
 
