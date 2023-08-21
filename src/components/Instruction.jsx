@@ -5,7 +5,7 @@ import '../assets/Instruction.scss'
 const Instruction = () => {
   return (
     <>
-    <p> Start by inputting your choices below one at a time: </p>
+    <p> Start by inputting your choices below: </p>
     </>
 
   )

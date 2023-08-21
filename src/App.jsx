@@ -12,7 +12,7 @@ import redArrow from "./assets/redArrow.png"
 
 function App() {
   
-  const randomNum = Math.floor(Math.random() * (2-1))
+  // const randomNum = Math.floor(Math.random() * (1000-500) + 500)
 
   const { rotate, setRotate, spinButton, setSpinButton, result, setResult, data } = useContext(StoreContext)
   const [finishSpin, setFinishSpin] = useState(false)
@@ -29,6 +29,9 @@ function App() {
       if (spinButton === 'stop'){
         
         setSpinButton(' . . . . ')
+
+        const randomTime = Math.floor(Math.random() * (1000-500) + 800)
+        console.log('random time',randomTime)
         
         setTimeout(() => {
           setRotate(!rotate)
@@ -37,7 +40,7 @@ function App() {
   
           setFinishSpin(true)
   
-        }, 1000);
+        }, randomTime);
         
       } else {
         setSpinButton('stop')
