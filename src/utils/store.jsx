@@ -9,6 +9,7 @@ const StoreProvider = ({ children }) => {
   const [result, setResult] = useState('')
   const [rotate, setRotate] = useState(false)
   const [spinButton, setSpinButton] = useState('spin')
+  const [emptyInput, setEmptyInput] = useState(false)
 
   return (
     <StoreContext.Provider
@@ -22,7 +23,9 @@ const StoreProvider = ({ children }) => {
         rotate, 
         setRotate,
         spinButton,
-        setSpinButton
+        setSpinButton, 
+        emptyInput, 
+        setEmptyInput
       }}
     >
       {children}

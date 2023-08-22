@@ -5,6 +5,7 @@ import InputBox from './components/InputBox'
 import ResultBox from './components/ResultBox'
 import Animation from './components/Animation'
 import Instruction from './components/Instruction'
+import MissingInputDialog from './components/MissingInputDialog'
 import { StoreContext } from './utils/store'
 import { motion } from "framer-motion"
 import redArrow from "./assets/redArrow.png"
@@ -14,9 +15,9 @@ function App() {
   
   // const randomNum = Math.floor(Math.random() * (1000-500) + 500)
 
-  const { rotate, setRotate, spinButton, setSpinButton, result, setResult, data } = useContext(StoreContext)
+  const { rotate, setRotate, spinButton, setSpinButton, result, setResult, data, emptyInput, setEmptyInput } = useContext(StoreContext)
   const [finishSpin, setFinishSpin] = useState(false)
-  
+
 
   const handleSpin = () => {
 
@@ -50,7 +51,7 @@ function App() {
         setFinishSpin(!finishSpin)
       }
     } else {
-      alert('Please input choices')
+      handleClickOpen()
     }
     
   
@@ -87,6 +88,12 @@ function App() {
 
 //   console.log(xPosition, yPosition)
 // }
+  
+const handleClickOpen = () => {
+  setEmptyInput(true);
+};
+
+  
 
   return (
     <>
@@ -103,7 +110,11 @@ function App() {
 
         <Animation/>
         {result && <ResultBox />}
+        
       </main>
+
+      {emptyInput && <MissingInputDialog/>}
+      
     </>
   )
 }

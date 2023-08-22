@@ -1,15 +1,15 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { StoreContext } from '../utils/store';
+import MissingInputDialog from './MissingInputDialog';
 import '../assets/InputBox.scss';
-import {Dialog, DialogContent, DialogContentText, DialogTitle} from '@mui/material';
+// import {Dialog, DialogContent, DialogContentText, DialogTitle, DialogActions, Button} from '@mui/material';
 
 
 export default function InputBox() {
   
-  const { parts, setParts } = useContext(StoreContext)
+  const { parts, setParts, emptyInput, setEmptyInput } = useContext(StoreContext)
   const { data, setData } = useContext(StoreContext)
   const [input, setInput] = useState('')
-  const [emptyInput, setEmptyInput] = useState(false);
   
   const handleInput = (e) => {
     setInput(e.target.value)
@@ -19,7 +19,6 @@ export default function InputBox() {
     e.preventDefault()
 
     if (input.length <= 0) {
-      // alert('Please type in your input')
       handleClickOpen();
     } else if (input.length > 0) {
       const newParts = [...parts, 1]
@@ -31,13 +30,8 @@ export default function InputBox() {
   }
 
 
-  
   const handleClickOpen = () => {
     setEmptyInput(true);
-  };
-
-  const handleClose = () => {
-    setEmptyInput(false);
   };
 
 
@@ -50,30 +44,8 @@ export default function InputBox() {
 
       </form>
       
-      <div>
-      <Dialog
-        open= {emptyInput}
-        onClose={handleClose}
-        aria-labelledby="alert-dialog-title"
-        aria-describedby="alert-dialog-description"
-        scroll="paper"
-        sx={{
-          "& .MuiDialog-container": {
-          alignItems: "flex-start",
-          },
-        }}
-        PaperProps={{ sx: { mt: "300px" } }}
-      >
-        <DialogTitle id="alert-dialog-title">
-          {"Missing Input:"} 
-        </DialogTitle>
-        <DialogContent>
-          <DialogContentText id="alert-dialog-description" fontSize="20px">
-            Please type in your input
-          </DialogContentText>
-        </DialogContent>
-        </Dialog>
-        </div>
+
+      {emptyInput && <MissingInputDialog />}
 
 
     </>
