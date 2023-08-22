@@ -7,6 +7,7 @@ import Animation from './components/Animation'
 import Instruction from './components/Instruction1'
 import Instruction2 from './components/Instruction2'
 import MissingInputDialog from './components/MissingInputDialog'
+import ChoiceList from './components/ChoiceList'
 import { StoreContext } from './utils/store'
 import { motion } from "framer-motion"
 import redArrow from "./assets/redArrow.png"
@@ -76,7 +77,7 @@ function App() {
     }
 
 
-  }, [finishSpin])
+  }, [finishSpin, data])
 
 
 
@@ -99,25 +100,31 @@ const handleClickOpen = () => {
 
   return (
     <>
-      <main id="center">
-        <Instruction/>
-        <InputBox />
-        <div id="spin">
-          <button id="spin-button" onClick={handleSpin} >{spinButton}</button>
-        </div>
+      <h1>Wheel-A-Choice</h1>
+      <main>
 
-        <div id="arrow-button" /*ref={arrowClick} onClick={getClickPosition} */>
-          <img src={redArrow} alt="arrow"/>
-        </div>
+        <section id="center">
+          <Instruction/>
+          <InputBox />
+          <div id="spin">
+            <button id="spin-button" onClick={handleSpin} >{spinButton}</button>
+          </div>
 
-        <Instruction2/>
+          <div id="arrow-button" /*ref={arrowClick} onClick={getClickPosition} */>
+            <img src={redArrow} alt="arrow"/>
+          </div>
 
-        <Animation/>
-        {result && <ResultBox />}
+          <Instruction2/>
 
+          <Animation/>
+          {result && <ResultBox />}
+
+        </section>
+        
+        <ChoiceList />
         
       </main>
-
+      
       {emptyInput && <MissingInputDialog/>}
       
     </>

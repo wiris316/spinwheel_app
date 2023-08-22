@@ -1,14 +1,20 @@
 // $bgColor: #023C40;
 $bgColor: #9bbdf9bd;
 $fontColor: rgb(108, 105, 147);
+$headerColor: rgb(89, 87, 118);
 $pieSlice:#f39396; //orange-red;
 
 html{
-  background-color: $bgColor
+  background-color: $bgColor;
   // background-color: rgba(0, 0, 0, 0.889);
+  h1 {
+    color: $headerColor;
+    text-align: center;
+    font-size: 50px;
+  }
 }
 
-main {
+#center {
   border: solid;
   border-radius: 70px;
   border-width: 10px;
@@ -17,7 +23,7 @@ main {
   padding: 0px 20px 0 50px;
   width: 800px;
   height: 1000px;
-  margin: 50px auto;
+  margin: 30px auto;
   // align-content: center;
 }
 
