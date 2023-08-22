@@ -6,12 +6,24 @@ $pieSlice:#f39396; //orange-red;
 
 html{
   background-color: $bgColor;
+
   // background-color: rgba(0, 0, 0, 0.889);
+
+
   h1 {
     color: $headerColor;
     text-align: center;
     font-size: 50px;
   }
+}
+
+main {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  // place-items: center;
+  justify-items:space-between;
+  grid-gap: 10px;
+  position: relative;
 }
 
 #center {

@@ -29,12 +29,12 @@ function App() {
   
       let tempSpinButton = document.getElementById('spin-button')
         
-      if (spinButton === 'stop'){
+      if (spinButton === 'stop') {
         
         setSpinButton(' . . . . ')
 
-        const randomTime = Math.floor(Math.random() * (1000-500) + 800)
-        console.log('random time',randomTime)
+        const randomTime = Math.floor(Math.random() * (1000 - 500) + 800)
+        console.log('random time', randomTime)
         
         setTimeout(() => {
           setRotate(!rotate)
@@ -45,6 +45,8 @@ function App() {
   
         }, randomTime);
         
+      } else if (spinButton === ' . . . . ') {
+          console.log(' . . . . . ')
       } else {
         setResult(false)
         setSpinButton('stop')
