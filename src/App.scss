@@ -14,9 +14,9 @@ main {
   border-width: 10px;
   // border-color: rgb(222, 211, 211);
   border-color: $fontColor;
-  padding-bottom: 0px;
+  padding: 0px 20px 0 50px;
   width: 800px;
-  height: 800px;
+  height: 1000px;
   margin: 50px auto;
   // align-content: center;
 }
@@ -28,7 +28,7 @@ main {
 
   #spin-button {
     position:absolute;
-    margin: 240px 0 20px 0;
+    margin: 350px 0 20px 0;
     justify-self: center;
     z-index: 2;
     font-size: 30px;
@@ -50,7 +50,7 @@ main {
   // text-align: center;
   // display:block;
   // left:48%;
-  margin: 75px 0 0 390px;
+  margin: 185px 0 0 390px;
   background-color: transparent;
   z-index: 2;
   height:30px;

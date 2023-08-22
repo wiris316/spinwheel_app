@@ -4,7 +4,8 @@ import PieChart from './components/PieChart'
 import InputBox from './components/InputBox'
 import ResultBox from './components/ResultBox'
 import Animation from './components/Animation'
-import Instruction from './components/Instruction'
+import Instruction from './components/Instruction1'
+import Instruction2 from './components/Instruction2'
 import MissingInputDialog from './components/MissingInputDialog'
 import { StoreContext } from './utils/store'
 import { motion } from "framer-motion"
@@ -44,6 +45,7 @@ function App() {
         }, randomTime);
         
       } else {
+        setResult(false)
         setSpinButton('stop')
         tempSpinButton.style.color = 'red'
         setRotate(!rotate);
@@ -108,8 +110,11 @@ const handleClickOpen = () => {
           <img src={redArrow} alt="arrow"/>
         </div>
 
+        <Instruction2/>
+
         <Animation/>
         {result && <ResultBox />}
+
         
       </main>
 
