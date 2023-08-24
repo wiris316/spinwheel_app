@@ -25,7 +25,7 @@ function App() {
 
     // when users click 'stop', spin another 1000 millisec before stop
     
-    if (data.length > 1) {
+    if (data.length > 1 ) {
       
       let tempSpinButton = document.getElementById('spin-button')
       

@@ -12,30 +12,25 @@ function ResultBox() {
   let inputs = data.length;
   const sliceDegree = 360 / inputs;
   const resultObj = {}
+  let items = 1; 
 
-  for (let i = 0; i < data.length; i++) {
-    resultObj[data[i]] = Math.floor(sliceDegree * (i + 1)) 
-    if (i > 0) {
-      resultObj[data[i]] = Math.floor(sliceDegree * inputs)
-      inputs--;
-    }
+  for (let i = data.length-1; i >= 0; i--) {
+    resultObj[data[i]] = Math.floor(sliceDegree * (items++))
   }
 
-  console.log('resultobj', resultObj)
-  
+  console.log(resultObj)
+
   for (const [key, value] of Object.entries(resultObj)) {
-    if (tempDegree < value && tempDegree > value-sliceDegree) {
-      console.log('tempdegree',tempDegree)
+    if (tempDegree < value) {
       setResult(key)
-      console.log('key', key)
-      break;
+      // console.log('key here', key)
     } else if (tempDegree === 0 || tempDegree === value) {
       setResult('Try Again')
     }
   }
 
+
   return (
-    
     <>
       <div id="result-box">{result}</div>
     </>
@@ -43,3 +38,5 @@ function ResultBox() {
 }
 
 export default ResultBox;
+
+

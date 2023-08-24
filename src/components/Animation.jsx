@@ -27,7 +27,7 @@ function Animation() {
 
   const variants = {
     rotate: {
-      rotate: [360,0],
+      rotate: [0, 360],
       // scale: [1,0.98],
       transition: { repeat: Infinity, duration: 1, ease: 'linear' },
       // x: {duration: 1},
@@ -46,7 +46,7 @@ function Animation() {
 
   useEffect(() => {
     let rotationDegree = Math.floor(captureDegree())
-    setTempDegree(0)
+    setTempDegree(rotationDegree)
     
   }, [rotate])
 

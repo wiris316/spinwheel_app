@@ -20,13 +20,15 @@ export default function InputBox() {
 
     if (input.length <= 0) {
       handleClickOpen();
-    } else if (input.length > 0) {
+    } else if (data.length < 12 && input.length > 0) {
       const newParts = [...parts, 1]
       setParts(newParts)
       const newData = [...data, input]
       setData(newData);
       setInput('')
-    } 
+    } else {
+      alert('the wheel is full')
+    }
   }
 
 
