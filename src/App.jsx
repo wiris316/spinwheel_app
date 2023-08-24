@@ -26,17 +26,18 @@ function App() {
     // when users click 'stop', spin another 1000 millisec before stop
     
     if (data.length > 1) {
-  
+      
       let tempSpinButton = document.getElementById('spin-button')
-        
+      
       if (spinButton === 'stop') {
         
         setSpinButton(' . . . . ')
-
+        
         const randomTime = Math.floor(Math.random() * (1000 - 500) + 800)
         console.log('random time', randomTime)
         
         setTimeout(() => {
+          setResult(true)
           setRotate(!rotate)
           setSpinButton('spin')
           tempSpinButton.style.color = 'rgb(108, 105, 147)'
@@ -123,7 +124,7 @@ const handleClickOpen = () => {
 
         </section>
         
-        <ChoiceList />
+        {/* <ChoiceList /> */}
         
       </main>
       

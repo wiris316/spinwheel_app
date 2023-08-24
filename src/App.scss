@@ -77,15 +77,9 @@ main {
   img {
     height: 70px;
     width: 60px;
-    // transform: rotate(-55deg);
+    // transform: rotate(90deg);
     position:absolute;
-    // justify-content: center;
-    // align-self: center;
-    // text-align: center;
-    // display:block;
-    // left:48%;
-    // margin: 20px 0 0 380px;
-    margin: -55px 0 0 -28px;
+    margin: -70px 0 0 -20px;
     z-index: 2;
   }
 }

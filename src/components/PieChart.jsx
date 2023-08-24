@@ -53,46 +53,47 @@ const PieChart = () => {
         // '#58595b', //gray
         // '#8549ba' //purple
       ],
-    // label: '# of Votes',
+    // label: '',
     borderWidth: 2
     }]
   }
 
 
   const chartRef = useRef();
-  const onClick = (event) => {
-    setResult('')
-    setSpun(false)
-    if (chartRef.current !== undefined) {
-      // console.log('this is the event', event)
-      // console.log('chartRef.current', chartRef.current.tooltip.title[0])
-      // console.log('result here',chartRef.current.tooltip.title[0])
-      // setResult(chartRef.current.tooltip.title[0])
+  // const onClick = (event) => {
+    // setResult('')
+    // setSpun(false)
+    // if (chartRef.current !== undefined) {
+    //   // console.log('this is the event', event)
+    //   // console.log('chartRef.current', chartRef.current.tooltip.title[0])
+    //   // console.log('result here',chartRef.current.tooltip.title[0])
+    //   // setResult(chartRef.current.tooltip.title[0])
 
 
-      const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
-      const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+    //   // const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+    //   // const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
     
-      const pixelX = (50/ 100) * viewportWidth;
-      const pixelY = (30/ 100) * viewportHeight;
-      console.log(pixelX, pixelY)
+    //   // const pixelX = (50/ 100) * viewportWidth;
+    //   // const pixelY = (30/ 100) * viewportHeight;
+    //   // console.log(pixelX, pixelY)
     
-      document.elementFromPoint(pixelX, pixelY).click()
+    //   // document.elementFromPoint(pixelX, pixelY).click()
 
-    }
-    if (getElementsAtEvent(chartRef.current, event).length > 0) {
-      console.log('arceleement', getElementsAtEvent(chartRef.current, event))
-      const datasetIndexNum = getElementsAtEvent(chartRef.current, event)[0].datasetIndex
-      const dataPoint = getElementsAtEvent(chartRef.current, event)[0].index
+    // }
+    // console.log('click')
+    // if (getElementsAtEvent(chartRef.current, event).length > 0) {
+    //   console.log('arceleement', getElementsAtEvent(chartRef.current, event))
+    //   const datasetIndexNum = getElementsAtEvent(chartRef.current, event)[0].datasetIndex
+    //   const dataPoint = getElementsAtEvent(chartRef.current, event)[0].index
       
-      // console.log('datasetIndexNum', datasetIndexNum)
-      // console.log('dataPoint', dataPoint)
-      setResult(chartData.labels[dataPoint])
-      console.log('which animal', chartData.labels[dataPoint])
-    }
-    console.log('slicecliccked')
+    //   // console.log('datasetIndexNum', datasetIndexNum)
+    //   // console.log('dataPoint', dataPoint)
+    //   setResult(chartData.labels[dataPoint])
+    //   console.log('which animal', chartData.labels[dataPoint])
+    // }
+    // console.log('slicecliccked')
     // console.log(getElementsAtEvent(chartRef.current, event))
-  }
+  // }
   
 
   return (
@@ -118,7 +119,7 @@ const PieChart = () => {
           // maintainAspectRatio: false
         }}
         data = {chartData}
-        onClick={onClick}
+        // onClick={onClick}
         ref = {chartRef}
         plugins={[ ChartDataLabels ]}
       />

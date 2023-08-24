@@ -8,8 +8,8 @@ import { motion } from "framer-motion"
 
 function Animation() {
   
-  const { rotate, setRotate, spinButton, setSpinButton, result, setResult } = useContext(StoreContext)
-  const [tempDegree,setTempDegree] = useState(0)
+  const { rotate, setRotate, spinButton, setSpinButton, result, setResult, tempDegree, setTempDegree } = useContext(StoreContext)
+
 
   
   let attributes = document.getElementById('Animation')
@@ -20,14 +20,14 @@ function Animation() {
       let degree = rotationDegree.split(' ')[1]
       degree = degree.replace(/[^0-9.]/gi,'')
       
-      console.log('degree',degree)
+      // console.log('degree',degree)
       return degree
     }
   }
 
   const variants = {
     rotate: {
-      rotate: [0, 360],
+      rotate: [360,0],
       // scale: [1,0.98],
       transition: { repeat: Infinity, duration: 1, ease: 'linear' },
       // x: {duration: 1},
@@ -46,8 +46,8 @@ function Animation() {
 
   useEffect(() => {
     let rotationDegree = Math.floor(captureDegree())
-    setTempDegree(rotationDegree)
-
+    setTempDegree(0)
+    
   }, [rotate])
 
   return (
