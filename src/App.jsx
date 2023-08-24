@@ -7,6 +7,7 @@ import Animation from './components/Animation'
 import Instruction from './components/Instruction1'
 import Instruction2 from './components/Instruction2'
 import MissingInputDialog from './components/MissingInputDialog'
+import FullWheelDialog from './components/FullWheelDialog'
 import ChoiceList from './components/ChoiceList'
 import { StoreContext } from './utils/store'
 import { motion } from "framer-motion"
@@ -17,8 +18,9 @@ function App() {
   
   // const randomNum = Math.floor(Math.random() * (1000-500) + 500)
 
-  const { rotate, setRotate, spinButton, setSpinButton, result, setResult, data, emptyInput, setEmptyInput } = useContext(StoreContext)
+  const { rotate, setRotate, spinButton, setSpinButton, result, setResult, data, emptyInput, setEmptyInput, fullWheel } = useContext(StoreContext)
   const [finishSpin, setFinishSpin] = useState(false)
+  
 
 
   const handleSpin = () => {
@@ -47,7 +49,8 @@ function App() {
         }, randomTime);
         
       } else if (spinButton === ' . . . . ') {
-          console.log(' . . . . . ')
+        console.log(' . . . . . ')
+        
       } else {
         setResult(false)
         setSpinButton('stop')
@@ -129,7 +132,7 @@ const handleClickOpen = () => {
       </main>
       
       {emptyInput && <MissingInputDialog/>}
-      
+      {fullWheel && <FullWheelDialog/>}
     </>
   )
 }

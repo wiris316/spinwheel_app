@@ -10,7 +10,9 @@ const StoreProvider = ({ children }) => {
   const [rotate, setRotate] = useState(false)
   const [spinButton, setSpinButton] = useState('spin')
   const [emptyInput, setEmptyInput] = useState(false)
-  const [tempDegree,setTempDegree] = useState(0)
+  const [tempDegree, setTempDegree] = useState(0)
+  const [fullWheel, setFullWheel] = useState(false)
+
 
   return (
     <StoreContext.Provider
@@ -28,7 +30,9 @@ const StoreProvider = ({ children }) => {
         emptyInput, 
         setEmptyInput,
         tempDegree, 
-        setTempDegree
+        setTempDegree, 
+        fullWheel, 
+        setFullWheel
       }}
     >
       {children}

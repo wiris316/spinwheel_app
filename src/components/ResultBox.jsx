@@ -21,9 +21,9 @@ function ResultBox() {
   console.log(resultObj)
 
   for (const [key, value] of Object.entries(resultObj)) {
+    console.log('temp degree', tempDegree)
     if (tempDegree < value) {
       setResult(key)
-      // console.log('key here', key)
     } else if (tempDegree === 0 || tempDegree === value) {
       setResult('Try Again')
     }

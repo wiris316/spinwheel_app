@@ -7,7 +7,7 @@ import '../assets/InputBox.scss';
 
 export default function InputBox() {
   
-  const { parts, setParts, emptyInput, setEmptyInput } = useContext(StoreContext)
+  const { parts, setParts, emptyInput, setEmptyInput,setFullWheel } = useContext(StoreContext)
   const { data, setData } = useContext(StoreContext)
   const [input, setInput] = useState('')
   
@@ -27,7 +27,7 @@ export default function InputBox() {
       setData(newData);
       setInput('')
     } else {
-      alert('the wheel is full')
+      setFullWheel(true)
     }
   }
 
