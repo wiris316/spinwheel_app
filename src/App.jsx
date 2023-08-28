@@ -35,7 +35,7 @@ function App() {
         
         setSpinButton(' . . . . ')
         
-        const randomTime = Math.floor(Math.random() * (1000 - 500) + 800)
+        const randomTime = Math.floor(Math.random() * (1000 - 200) + 1000)
         console.log('random time', randomTime)
         
         setTimeout(() => {
@@ -68,22 +68,22 @@ function App() {
     // spinButton === 'spin' ? setSpinButton('stop') : setSpinButton('spin')
   }
   
-  useEffect(() => {
+  // useEffect(() => {
     
-    if (finishSpin) {
-      const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
-      const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+  //   if (finishSpin) {
+  //     const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+  //     const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
     
-      const pixelX = (50/ 100) * viewportWidth;
-      const pixelY = (30/ 100) * viewportHeight;
-      console.log(pixelX, pixelY)
+  //     const pixelX = (50/ 100) * viewportWidth;
+  //     const pixelY = (30/ 100) * viewportHeight;
+  //     console.log(pixelX, pixelY)
     
-      document.elementFromPoint(pixelX, pixelY).click()
+  //     document.elementFromPoint(pixelX, pixelY).click()
       
-    }
+  //   }
 
 
-  }, [finishSpin, data])
+  // }, [finishSpin, data])
 
 
 

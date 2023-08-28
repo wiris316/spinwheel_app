@@ -5,28 +5,31 @@ import '../assets/ResultBox.scss'
 function ResultBox() {
   
   const { result, setResult, data, tempDegree } = useContext(StoreContext)
-  
-  // useEffect(() => {  
-  // }, [result])
-  
   let inputs = data.length;
   const sliceDegree = 360 / inputs;
-  const resultObj = {}
+  const resultObj = new Map()
   let items = 1; 
+  
+  useEffect(() => {
+    console.log('resultObj',resultObj)
+    console.log('tempDegree', tempDegree)
+  }, [result])
+  
 
   for (let i = data.length-1; i >= 0; i--) {
-    resultObj[data[i]] = Math.floor(sliceDegree * (items++))
+    // resultObj[`${ data[i] } `] = Math.floor(sliceDegree * (items--))
+    resultObj.set(data[i], Math.floor(sliceDegree * (items++)))
   }
 
-  console.log(resultObj)
 
-  for (const [key, value] of Object.entries(resultObj)) {
-    console.log('temp degree', tempDegree)
-    if (tempDegree < value) {
-      setResult(key)
-    } else if (tempDegree === 0 || tempDegree === value) {
+  for (const [key, value] of resultObj.entries()) {
+    if (tempDegree === 0 || tempDegree == value) {
       setResult('Try Again')
-    }
+      break;
+    } else if (tempDegree < value ) {
+      setResult(key)
+      break;
+    } 
   }
 
 

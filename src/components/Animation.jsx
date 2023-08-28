@@ -28,10 +28,10 @@ function Animation() {
   const variants = {
     rotate: {
       rotate: [0, 360],
-      // scale: [1,0.98],
-      transition: { repeat: Infinity, duration: 1, ease: 'linear' },
+      // scale: [1,1.5,tempDegree],
+      transition: { repeat: Infinity, duration: 0.75, ease: 'linear' },
       // x: {duration: 1},
-      // times: [5, 5, 0.5, 80, 80]// Adjust duration for smoother animation
+      // times: [5, 5, 0.5, 300, 80]// Adjust duration for smoother animation
     },
     stop: {
       rotate: tempDegree, 
