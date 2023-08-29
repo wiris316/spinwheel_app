@@ -1,16 +1,19 @@
 $fontColor: rgb(108, 105, 147);
 
+#data-list-title {
+  // font-size:40px;
+}
 
 #data-list {
   font-size: 30px;
-
-  border: solid;
-  border-radius: 70px;
-  border-width: 10px;
-  width: 150px;
+  color: $fontColor;
+  // border: solid;
+  // border-radius: 70px;
+  // border-width: 10px;
+  // width: 150px;
   // position:absolute;
   // border-color: rgb(222, 211, 211);
-  border-color: $fontColor;
+  // border-color: $fontColor;
   // padding: 0px 20px 0 50px;
   // width: 800px;
   // height: 1000px;

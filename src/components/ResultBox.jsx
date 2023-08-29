@@ -24,7 +24,7 @@ function ResultBox() {
 
   for (const [key, value] of resultObj.entries()) {
     if (tempDegree === 0 || tempDegree == value) {
-      setResult('Try Again')
+      setResult('Spin Again')
       break;
     } else if (tempDegree < value ) {
       setResult(key)

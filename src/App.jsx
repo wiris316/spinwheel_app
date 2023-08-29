@@ -64,26 +64,9 @@ function App() {
     }
     
   
-    // document.elementFromPoint(423, 300).click();
-    // spinButton === 'spin' ? setSpinButton('stop') : setSpinButton('spin')
   }
   
-  // useEffect(() => {
-    
-  //   if (finishSpin) {
-  //     const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
-  //     const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
-    
-  //     const pixelX = (50/ 100) * viewportWidth;
-  //     const pixelY = (30/ 100) * viewportHeight;
-  //     console.log(pixelX, pixelY)
-    
-  //     document.elementFromPoint(pixelX, pixelY).click()
-      
-  //   }
 
-
-  // }, [finishSpin, data])
 
 
 
@@ -126,8 +109,9 @@ const handleClickOpen = () => {
           {result && <ResultBox />}
 
         </section>
-        
-        {/* <ChoiceList /> */}
+        <section id="choice-list">
+        {data.length? <ChoiceList /> : null}
+        </section>
         
       </main>
       

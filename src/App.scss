@@ -4,9 +4,13 @@ $fontColor: rgb(108, 105, 147);
 $headerColor: rgb(89, 87, 118);
 $pieSlice:#f39396; //orange-red;
 
-html{
+body{
   background-color: $bgColor;
-
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  // min-height: 100vh;
+  // align-content: center;
   // background-color: rgba(0, 0, 0, 0.889);
 
 
@@ -18,26 +22,51 @@ html{
 }
 
 main {
-  display:grid;
-  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  display:flex;
+  grid-gap: 50px;
   // place-items: center;
-  justify-items:space-between;
-  grid-gap: 10px;
-  position: relative;
-}
+  // position: relative;
+  // grid-template-columns: 1fr 1fr;
+  // justify-items:center;
+  // margin-left: 10%;        
+
+//   section {
+
+// }
 
 #center {
   border: solid;
   border-radius: 70px;
   border-width: 10px;
-  // border-color: rgb(222, 211, 211);
   border-color: $fontColor;
   padding: 0px 20px 0 50px;
   width: 800px;
-  height: 1000px;
-  margin: 30px auto;
-  // align-content: center;
+  height: 950px;
+
 }
+
+#choice-list{
+  margin:auto;
+  width: auto;
+  height: 100%;
+  align-items:flex-start;
+  // display:flex;
+  // position:relative
+
+  ul{
+    // border-radius: 20%;
+    
+  }
+
+  li {
+    // text-align: center;
+    // text-decoration: none;
+    list-style-type: none;
+  }
+}
+}
+
 
 #spin {
   display:grid;
