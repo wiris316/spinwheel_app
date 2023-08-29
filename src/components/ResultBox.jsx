@@ -18,7 +18,7 @@ function ResultBox() {
 
   for (let i = data.length-1; i >= 0; i--) {
     // resultObj[`${ data[i] } `] = Math.floor(sliceDegree * (items--))
-    resultObj.set(data[i], Math.floor(sliceDegree * (items++)))
+    resultObj.set(`${data[i]}_${i}`, Math.floor(sliceDegree * (items++)))
   }
 
 
@@ -26,8 +26,9 @@ function ResultBox() {
     if (tempDegree === 0 || tempDegree == value) {
       setResult('Spin Again')
       break;
-    } else if (tempDegree < value ) {
-      setResult(key)
+    } else if (tempDegree < value) {
+      let newKey = key.split('_')
+      setResult(newKey[0])
       break;
     } 
   }

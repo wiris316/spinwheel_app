@@ -58,26 +58,14 @@ const ChoiceList = () => {
       })
   }, [data])
 
-  let array = Object.entries(itemsObj)
-  console.log('aray', array)
-  // const list = function() { array.map((item) => {
-  //     <li>item[0]</li>
-  //   })
-  //   // for (const [key, value] of Object.entries(itemsObj)) {
-
-  //   // }
-  // }
-
-  // list()
-  
 
   return (
-    <>
+    <div id= "choice-list">
       <h2 id="data-list-title">Track your inputs:</h2>
       <ul id="data-list">
         {list}
       </ul>
-    </>
+    </div>
 
   )
   

@@ -91,8 +91,8 @@ const handleClickOpen = () => {
     <>
       <h1>Wheel-A-Choice</h1>
       <main>
-
         <section id="center">
+        {/* <button id="reset-button">Reset</button> */}
           <Instruction/>
           <InputBox />
           <div id="spin">

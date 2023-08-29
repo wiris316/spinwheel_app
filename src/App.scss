@@ -37,34 +37,27 @@ main {
 
 #center {
   border: solid;
-  border-radius: 70px;
+  border-radius: 50px;
   border-width: 10px;
   border-color: $fontColor;
   padding: 0px 20px 0 50px;
   width: 800px;
   height: 950px;
-
-}
-
-#choice-list{
-  margin:auto;
-  width: auto;
-  height: 100%;
-  align-items:flex-start;
-  // display:flex;
-  // position:relative
-
-  ul{
-    // border-radius: 20%;
-    
-  }
-
-  li {
-    // text-align: center;
-    // text-decoration: none;
-    list-style-type: none;
+  
+  #reset-button{
+    font-size: 30px;
+    justify-content: center;
+    z-index: 2;
+    // font-size: 20px;
+    background-color: white;
+    box-shadow: none;
+    border: none;
+    border-radius: 5px;
+    color: #023C40;
   }
 }
+
+
 }
 
 

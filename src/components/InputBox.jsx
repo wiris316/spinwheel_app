@@ -41,7 +41,7 @@ export default function InputBox() {
   return (
     <>
       <form>
-        <input name="ToDoBox" type='text' maxLength={8} placeholder='' onChange={handleInput} value={input}></input>
+        <input name="ToDoBox" type='text' maxLength={12} placeholder='' onChange={handleInput} value={input}></input>
         <button name="ToDoBox" onClick={handleSubmit} >Submit</button>
 
       </form>
