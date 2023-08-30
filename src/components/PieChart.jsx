@@ -1,22 +1,15 @@
-import React, {useState, useContext, useEffect, useRef} from 'react';
+import React, {useContext} from 'react';
 import { Pie, getElementsAtEvent } from 'react-chartjs-2';
 import 'chart.js/auto'
 import '../assets/Piechart.scss'
 import { StoreContext } from '../utils/store.jsx'
-import ResultBox from './ResultBox'
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 
-ChartJS.register(
-  ArcElement, 
-  Tooltip,
-  Legend
-)
+
 
 const PieChart = () => {
   
-  const {parts, data, result, setResult} = useContext(StoreContext)
-  const [spun, setSpun] = useState(false)
+  const {parts, data} = useContext(StoreContext)
 
 
   // console.log('cchartdatalabels', ChartDataLabels.defaults)
@@ -33,20 +26,21 @@ const PieChart = () => {
     labels: data,
     datasets: [{
       data: parts,
+      displacements: [0, 0, 40, 0, 0, 26],
       // label:"slices",
       
       backgroundColor: [
-        // '#E56B6F', //orange-red
         '#f39396',
         '#166a8f', // blueish slate
         '#acc236', //lime green
         '#75FAD2', //mint
         '#FBBDC8', //pink
-        // '#0AD3FF', //aqua blue
         '#355070', //slate
         '#537bc4', //blueish purple
-        // '#E1FAF9', //white
         '#4dc9f6', //icy blue
+        // '#E56B6F', //orange-red
+        // '#0AD3FF', //aqua blue
+        // '#E1FAF9', //white
         // '#f67019', //orange
         // '#f53794', //hot pink
         // '#00a950', //green
@@ -59,7 +53,7 @@ const PieChart = () => {
   }
 
 
-  const chartRef = useRef();
+  // const chartRef = useRef();
   // const onClick = (event) => {
     // setResult('')
     // setSpun(false)
@@ -102,6 +96,7 @@ const PieChart = () => {
         id="Pie"
         height="500%"
         options={{
+          // rotation: (180),
           plugins: {
             datalabels: {
               formatter: ((value, context)=> {
@@ -111,6 +106,22 @@ const PieChart = () => {
               font: {
                 size: '25px'
               },
+              // textAlign:'center'
+              // rotation: 45,
+              // display: 'auto',
+              // anchor: 'end',
+              // align: 'end',
+              // offset: 5,
+              // anchor: 'end',
+              // align: 'end',
+              // offset: -150, // Adjust this value to control the distance from the arc
+              // rotation: (context) => {
+              //   const chart = context.chart;
+              //   const meta = chart.getDatasetMeta(0);
+              //   const angle = (meta.data[context.dataIndex].startAngle + meta.data[context.dataIndex].endAngle) / 2;
+              //   console.log('angle', meta)
+              //   return angle;
+              // },
             },
             legend: {
               display: false
@@ -120,7 +131,7 @@ const PieChart = () => {
         }}
         data = {chartData}
         // onClick={onClick}
-        ref = {chartRef}
+        // ref = {chartRef}
         plugins={[ ChartDataLabels ]}
       />
       

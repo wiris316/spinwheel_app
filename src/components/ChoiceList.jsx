@@ -10,7 +10,6 @@ const ChoiceList = () => {
   const [list, setList] = useState([])
   
   useEffect(() => {
-    console.log('whats here', data[data.length-1])
     const promise1 = new Promise((resolve, reject) => { 
       resolve(data[data.length-1]);
     })
@@ -33,7 +32,6 @@ const ChoiceList = () => {
         if (answer !== undefined) {
           const newList = <li>{`${answer[0]} : ${answer[1]}`}</li>
           setList([...list, newList])
-          console.log('new', newList)
           return newList
         }
         
@@ -57,7 +55,7 @@ const ChoiceList = () => {
 
   return (
     <div id= "choice-list">
-      <h2 id="data-list-title">Input : # of times added</h2>
+      <h2 id="data-list-title">Input : # of times submitted</h2>
       <ul id="data-list">
         {list}
       </ul>
