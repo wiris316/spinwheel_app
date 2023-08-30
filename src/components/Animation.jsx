@@ -1,6 +1,5 @@
-import { useContext, useState, useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import PieChart from './PieChart'
-import InputBox from './InputBox'
 import { StoreContext } from '../utils/store'
 import '../assets/Animation.scss'
 import { motion } from "framer-motion"
@@ -8,7 +7,7 @@ import { motion } from "framer-motion"
 
 function Animation() {
   
-  const { rotate, setRotate, spinButton, setSpinButton, result, setResult, tempDegree, setTempDegree } = useContext(StoreContext)
+  const { rotate, tempDegree, setTempDegree } = useContext(StoreContext)
 
 
   
@@ -19,6 +18,8 @@ function Animation() {
       let rotationDegree = attributes.getAttribute('style')
       let degree = rotationDegree.split(' ')[1]
       degree = degree.replace(/[^0-9.]/gi,'')
+      
+      // console.log('degree',degree)
       return degree
     }
   }

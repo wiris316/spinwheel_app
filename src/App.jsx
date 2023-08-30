@@ -4,7 +4,8 @@ import PieChart from './components/PieChart'
 import InputBox from './components/InputBox'
 import ResultBox from './components/ResultBox'
 import Animation from './components/Animation'
-import Instruction from './components/Instruction1'
+import InstructionMain from './components/InstructionMain'
+import Instruction1 from './components/Instruction1'
 import Instruction2 from './components/Instruction2'
 import MissingInputDialog from './components/MissingInputDialog'
 import FullWheelDialog from './components/FullWheelDialog'
@@ -18,16 +19,18 @@ function App() {
   
   // const randomNum = Math.floor(Math.random() * (1000-500) + 500)
 
-  const { rotate, setRotate, spinButton, setSpinButton, result, setResult, data, emptyInput, setEmptyInput, fullWheel } = useContext(StoreContext)
-  const [finishSpin, setFinishSpin] = useState(false)
+  const { rotate, setRotate, spinButton, setSpinButton, result, setResult, data, emptyInput, setEmptyInput, fullWheel, shownInstructions, } = useContext(StoreContext)
+  // const [finishSpin, setFinishSpin] = useState(false)
+
+
   
 
 
   const handleSpin = () => {
 
-    // when users click 'stop', spin another 1000 millisec before stop
+    // when users click 'stop', spin random millisec before stop
     
-    if (data.length > 1 ) {
+    if (data.length) {
       
       let tempSpinButton = document.getElementById('spin-button')
       
@@ -44,7 +47,7 @@ function App() {
           setSpinButton('spin')
           tempSpinButton.style.color = 'rgb(108, 105, 147)'
   
-          setFinishSpin(true)
+          // setFinishSpin(true)
   
         }, randomTime);
         
@@ -57,7 +60,7 @@ function App() {
         tempSpinButton.style.color = 'red'
         setRotate(!rotate);
         
-        setFinishSpin(!finishSpin)
+        // setFinishSpin(!finishSpin)
       }
     } else {
       handleClickOpen()
@@ -89,11 +92,11 @@ const handleClickOpen = () => {
 
   return (
     <>
+      {shownInstructions && <InstructionMain /> }
       <h1>Wheel-A-Choice</h1>
       <main>
         <section id="center">
-        {/* <button id="reset-button">Reset</button> */}
-          <Instruction/>
+          <Instruction1/>
           <InputBox />
           <div id="spin">
             <button id="spin-button" onClick={handleSpin} >{spinButton}</button>
@@ -109,8 +112,9 @@ const handleClickOpen = () => {
           {result && <ResultBox />}
 
         </section>
-        <section id="choice-list">
+        <section id="choice-list-section">
         {data.length? <ChoiceList /> : null}
+        {/* <button id="reset-button">Reset</button> */}
         </section>
         
       </main>

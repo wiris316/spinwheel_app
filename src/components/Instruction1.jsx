@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from 'react';
 import { StoreContext } from '../utils/store';
 import '../assets/Instruction.scss'
 
-const Instruction = () => {
+const Instruction1 = () => {
   return (
     <>
     <p> 1. Start by submitting at least 2 choices: </p>
@@ -12,4 +12,4 @@ const Instruction = () => {
   
 }
 
-export default Instruction
+export default Instruction1

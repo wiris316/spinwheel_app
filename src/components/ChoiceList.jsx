@@ -1,10 +1,11 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { StoreContext } from '../utils/store';
 import '../assets/ChoiceList.scss'
+import ConfirmResetDialog from './ConfirmResetDialog';
 
 const ChoiceList = () => {
   
-  const { data } = useContext(StoreContext)
+  const { data, reset, setReset } = useContext(StoreContext)
   const [itemsObj, setItemsObj] = useState({})
   const [added, setAdded] = useState(false)
   const [list, setList] = useState([])
@@ -53,14 +54,24 @@ const ChoiceList = () => {
   }, [data])
 
 
+  const handleReset = () => {
+    setReset(true)
+    // setData([])
+    // setParts([])
+  }
+
+
   return (
     <div id= "choice-list">
       <h2 id="data-list-title">Input : # of times submitted</h2>
+
       <ul id="data-list">
         {list}
       </ul>
+      <button id="reset-button" onClick={handleReset} >Reset</button>
+      {reset && <ConfirmResetDialog />}
     </div>
-
+    
   )
   
 }

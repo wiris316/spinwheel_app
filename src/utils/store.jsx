@@ -12,6 +12,9 @@ const StoreProvider = ({ children }) => {
   const [emptyInput, setEmptyInput] = useState(false)
   const [tempDegree, setTempDegree] = useState(0)
   const [fullWheel, setFullWheel] = useState(false)
+  const [shownInstructions, setShownInstructions] = useState(true)
+  const [reset, setReset] = useState(false)
+
 
 
   return (
@@ -32,7 +35,12 @@ const StoreProvider = ({ children }) => {
         tempDegree, 
         setTempDegree, 
         fullWheel, 
-        setFullWheel
+        setFullWheel,
+        shownInstructions,
+        setShownInstructions,
+        reset, 
+        setReset,
+        
       }}
     >
       {children}
