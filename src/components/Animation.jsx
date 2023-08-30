@@ -19,8 +19,6 @@ function Animation() {
       let rotationDegree = attributes.getAttribute('style')
       let degree = rotationDegree.split(' ')[1]
       degree = degree.replace(/[^0-9.]/gi,'')
-      
-      // console.log('degree',degree)
       return degree
     }
   }
