@@ -4,13 +4,34 @@ import '../assets/SuggestionBox.scss'
 
 function SuggestionBox(props) {
   
-  const { result, setResult, data, setData,parts, setParts, itemsObj, setItemsObj, tempDegree, setTempDegree, selectedSuggestion, setSelectedSuggestion } = useContext(StoreContext)
+  const { reset, setData, data, parts, setParts, itemsObj, setItemsObj, tempDegree, setTempDegree, selectedSuggestion, setSelectedSuggestion } = useContext(StoreContext)
   const { value, titles } = props;
 
-  const items = value.map((ele) => <p>{ele}</p>)
+
+  useEffect(() => {
+
+    if (data.length == 0) {
+      switchSelectDefault();
+    }
+    
+  }, [data])
   
-  const handleSelect = () => {
+  const items = value.map((ele) => <p>{ele}</p>)
+  const allSelectButtons = document.getElementsByClassName('select-suggestion-button')
+
+  const switchSelectDefault = () => {
+    for (let i = 0; i < allSelectButtons.length; i++) {
+      allSelectButtons[i].innerHTML = 'select'
+      allSelectButtons[i].style.color = 'rgb(108, 105, 147)'
+      allSelectButtons[i].style.backgroundColor='white'
+    }
+  }
+
+  
+  const handleSelect = (e) => {
+    switchSelectDefault();
     setData(value)
+    // setClicked(!clicked)
     let tempParts = [];
     let tempObj = {};
     value.forEach((ele) => {
@@ -21,11 +42,14 @@ function SuggestionBox(props) {
       }
       tempParts.push(1)
     })
-    console.log('tempObj', tempObj)
     setSelectedSuggestion(true)
     setParts(tempParts)
     setTempDegree(0)
     setItemsObj(tempObj)
+    e.target.innerHTML = 'selected'
+    e.target.style.color = 'white'
+    e.target.style.backgroundColor = 'rgb(108, 105, 147)'
+    
   }
   
   return (
@@ -33,7 +57,7 @@ function SuggestionBox(props) {
       <div id="suggestion-box">
         {/* {suggestionTitle} */}
         {items}
-        <button id="select-suggestion-button" onClick={handleSelect}>select</button>
+        <button className="select-suggestion-button" onClick={handleSelect} >select</button>
       </div>
     </>
   )

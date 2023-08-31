@@ -97,21 +97,30 @@ const PieChart = () => {
         height="500%"
         options={{
           // rotation: (180),
+
           plugins: {
+            tooltips: {
+              enabled: false
+              // xAlign: 'left',
+              // yAlign:'bottom',
+              // mode: 'index',
+              // position: 'nearest',
+              // intersect:true,
+            },
             datalabels: {
               formatter: ((value, context)=> {
                 return chartData.labels[context.dataIndex]
               }),
               color: 'white',
               font: {
-                size: '25px'
+                size: '18px'
               },
               // textAlign:'center'
-              // rotation: 45,
+              rotation: 45,
               // display: 'auto',
               // anchor: 'end',
               // align: 'end',
-              // offset: 5,
+              // offset: 2,
               // anchor: 'end',
               // align: 'end',
               // offset: -150, // Adjust this value to control the distance from the arc
