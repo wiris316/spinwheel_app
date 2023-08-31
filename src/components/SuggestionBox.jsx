@@ -25,7 +25,7 @@ function SuggestionBox(props) {
     setSelectedSuggestion(true)
     setParts(tempParts)
     setTempDegree(0)
-    // setItemsObj(tempObj)
+    setItemsObj(tempObj)
   }
   
   return (

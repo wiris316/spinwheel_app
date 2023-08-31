@@ -5,13 +5,15 @@ import ConfirmResetDialog from './ConfirmResetDialog';
 
 const ChoiceList = () => {
   
-  const { data, reset, setReset, itemsObj, setItemsObj, list, setList, selectedSuggestion, setSelectedSuggestion } = useContext(StoreContext)
+  const { data, reset, setReset, /*itemsObj, setItemsObj, list, setList,*/ selectedSuggestion, setSelectedSuggestion } = useContext(StoreContext)
 
   const [added, setAdded] = useState(false)
+  const [list, setList] = useState([])
+  const [itemsObj, setItemsObj] = useState({})
   
   useEffect(() => {
     console.log('in hereee')
-    if (selectedSuggestion == false) {
+    // if (selectedSuggestion == false) {
       console.log('it is false')
       const promise1 = new Promise((resolve, reject) => { 
         resolve(data[data.length-1]);
@@ -53,19 +55,9 @@ const ChoiceList = () => {
           }
           
         })
-    } else if (selectedSuggestion === true) {
-      // console.log('it is true')
-      for (const [key, vals] of Object.entries(itemsObj)) {
-        console.log('keyvals',[key, vals])
-        let newList = <li>{`${key} : ${vals}`}</li>
-        const promise = new Promise((resolve, reject) => resolve(setList([...list, newList])))
-        promise.then(() => 
-        console.log('list', list)
-        )
-      }
-    }
+    // } 
 
-  }, [data, selectedSuggestion])
+  }, [data])
 
 
   const handleReset = () => {
