@@ -11,8 +11,8 @@ function ResultBox() {
   let items = 1; 
   
   useEffect(() => {
-    console.log('resultObj',resultObj)
-    console.log('tempDegree', tempDegree)
+    // console.log('resultObj',resultObj)
+    // console.log('tempDegree', tempDegree)
   }, [result])
   
 

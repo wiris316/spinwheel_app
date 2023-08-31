@@ -46,7 +46,7 @@ const ChoiceList = () => {
             }
 
           }
-          console.log('result',newList.props.children.split(' ')[0])
+          // console.log('result',newList.props.children.split(' ')[0])
 
         }
         
@@ -63,7 +63,7 @@ const ChoiceList = () => {
 
   return (
     <div id= "choice-list">
-      <h2 id="data-list-title">Input : # of times submitted</h2>
+      <h3 id="data-list-title">Input : # of times submitted</h3>
 
       <ul id="data-list">
         {list}

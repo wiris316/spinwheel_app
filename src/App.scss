@@ -9,7 +9,8 @@ body{
   display:flex;
   justify-content: center;
   align-items: center;
-  min-Width: 1300px;
+  min-width: 1300px;
+  
 
 
   h1 {
@@ -23,6 +24,7 @@ main {
   width: 100%;
   display:flex;
   grid-gap: 50px;
+  margin-top: -10px;
   // place-items: center;
   // position: relative;
   // grid-template-columns: 1fr 1fr;
@@ -38,8 +40,8 @@ main {
   border-width: 10px;
   border-color: $fontColor;
   padding: 0px 20px 0 50px;
-  width: 800px;
-  height: 950px;
+  width: 600px;
+  height: 750px;
   
 
 }
@@ -55,7 +57,7 @@ main {
 
   #spin-button {
     position:absolute;
-    margin: 350px 0 20px 0;
+    margin: 280px 0 20px 0;
     justify-self: center;
     z-index: 2;
     font-size: 30px;
@@ -88,13 +90,13 @@ main {
     width: 60px;
     // transform: rotate(90deg);
     position:absolute;
-    margin: -70px 0 0 -20px;
+    margin: -95px 0 0 -120px;
     z-index: 2;
   }
 }
 
 canvas {
   margin: auto;
-  width: 500px;
-  height: 500px;
+  width: 430px;
+  height: 430px;
 }

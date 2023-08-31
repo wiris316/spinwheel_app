@@ -1,0 +1,28 @@
+$fontColor: rgb(108, 105, 147);
+
+
+#suggestion-box{
+  border:solid;
+  border-color:$fontColor;
+  border-radius: 20px;
+  width:100px;
+  margin: 0 5px 0 5px;
+  // display:flex;
+
+  p{
+    margin: 5px;
+  }
+
+  #select-suggestion-button{
+    margin-top: 8px;
+    background-color: white;
+    border:none;
+    // border-color:$fontColor;
+    border-radius: 20px;
+    font-size: 18px;
+    color: $fontColor;
+    width:100%;
+    height: 30px;
+    // box-shadow: none;
+  }
+}

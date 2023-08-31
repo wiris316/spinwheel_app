@@ -10,6 +10,7 @@ import Instruction2 from './components/Instruction2'
 import MissingInputDialog from './components/MissingInputDialog'
 import FullWheelDialog from './components/FullWheelDialog'
 import ChoiceList from './components/ChoiceList'
+import SuggestionBox from './components/SuggestionBank'
 import { StoreContext } from './utils/store'
 import { motion } from "framer-motion"
 import redArrow from "./assets/redArrow.png"
@@ -39,7 +40,6 @@ function App() {
         setSpinButton(' . . . . ')
         
         const randomTime = Math.floor(Math.random() * (1000 - 200) + 1000)
-        console.log('random time', randomTime)
         
         setTimeout(() => {
           setResult(true)
@@ -115,6 +115,7 @@ const handleClickOpen = () => {
         <section id="choice-list-section">
         {data.length? <ChoiceList /> : null}
         {/* <button id="reset-button">Reset</button> */}
+        <SuggestionBox/>
         </section>
         
       </main>

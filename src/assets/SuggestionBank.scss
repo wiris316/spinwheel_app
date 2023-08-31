@@ -1,0 +1,24 @@
+$fontColor: rgb(108, 105, 147);
+
+#suggestion-bank {
+  border:solid;
+  border-color: white;
+  border-radius: 20px;
+  border-width: 4px;
+  margin-top:10px;
+  
+  h3{
+    margin:10px 0 10px 10px;
+    font-family:Arial, Helvetica, sans-serif;
+    color: $fontColor;
+    text-align:center;
+  }
+  
+  #suggestion-section{
+    display:flex;
+    border-color: white;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    // height: 500px;
+  }
+}
