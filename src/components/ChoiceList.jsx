@@ -7,8 +7,8 @@ const ChoiceList = () => {
   
   const { data, reset, setReset } = useContext(StoreContext)
   const [itemsObj, setItemsObj] = useState({})
-  const [added, setAdded] = useState(false)
   const [list, setList] = useState([])
+  const [added, setAdded] = useState(false)
   
   useEffect(() => {
     const promise1 = new Promise((resolve, reject) => { 

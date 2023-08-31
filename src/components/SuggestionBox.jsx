@@ -5,21 +5,23 @@ import '../assets/SuggestionBox.scss'
 function SuggestionBox(props) {
   
   const { result, setResult, data, setData,parts, setParts, tempDegree } = useContext(StoreContext)
-  const { suggestions, titles } = props;
+  const { value, titles } = props;
 
-  // const list = value.map((ele) => <p>{ele}</p>)
-
-  // const items = value
+  const items = value.map((ele) => <p>{ele}</p>)
   
   const handleSelect = () => {
     setData(value)
+    let tempParts = [];
+    value.forEach((ele) => tempParts.push(1))
+    setParts(tempParts)
+    
   }
   
   return (
     <>
       <div id="suggestion-box">
         {/* {suggestionTitle} */}
-        {/* {list} */}
+        {items}
         <button id="select-suggestion-button" onClick={handleSelect}>select</button>
       </div>
     </>

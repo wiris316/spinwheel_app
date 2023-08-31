@@ -10,9 +10,9 @@ function SuggestionBank() {
   const chores = ['dishes', 'laundry', 'cook', 'sweep', 'vacuum', 'mop']
   const exercise = ['push-ups', 'squats', 'lunges', 'planks', 'burpees', 'crunches']
 
-  const suggestions = [{ food: [food] }, { chores: [chores] }, { exercise: [exercise] }]
+  const suggestions = [food, chores, exercise]
 
-  const suggestionList = suggestions.map((list, i) => <SuggestionBox suggestions={suggestions} titles={['food', 'chores', 'exercise']} key={i} />)
+  const suggestionList = suggestions.map((list, i) => <SuggestionBox value={list} suggestions={suggestions} titles={['food', ]} key={i} />)
 
 
   return (
