@@ -14,6 +14,9 @@ const StoreProvider = ({ children }) => {
   const [fullWheel, setFullWheel] = useState(false)
   const [shownInstructions, setShownInstructions] = useState(true)
   const [reset, setReset] = useState(false)
+  const [itemsObj, setItemsObj] = useState({})
+  const [list, setList] = useState([])
+  const [selectedSuggestion, setSelectedSuggestion] = useState(false)
 
 
 
@@ -40,6 +43,12 @@ const StoreProvider = ({ children }) => {
         setShownInstructions,
         reset, 
         setReset,
+        itemsObj,
+        setItemsObj,
+        list,
+        setList, 
+        selectedSuggestion,
+        setSelectedSuggestion
         
       }}
     >

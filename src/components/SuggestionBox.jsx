@@ -4,7 +4,7 @@ import '../assets/SuggestionBox.scss'
 
 function SuggestionBox(props) {
   
-  const { result, setResult, data, setData,parts, setParts, tempDegree } = useContext(StoreContext)
+  const { result, setResult, data, setData,parts, setParts, itemsObj, setItemsObj, tempDegree, setTempDegree, selectedSuggestion, setSelectedSuggestion } = useContext(StoreContext)
   const { value, titles } = props;
 
   const items = value.map((ele) => <p>{ele}</p>)
@@ -12,9 +12,20 @@ function SuggestionBox(props) {
   const handleSelect = () => {
     setData(value)
     let tempParts = [];
-    value.forEach((ele) => tempParts.push(1))
+    let tempObj = {};
+    value.forEach((ele) => {
+      if (tempObj[ele]) {
+        tempObj[ele]++;
+      } else {
+        tempObj[ele] = 1;
+      }
+      tempParts.push(1)
+    })
+    console.log('tempObj', tempObj)
+    setSelectedSuggestion(true)
     setParts(tempParts)
-    
+    setTempDegree(0)
+    // setItemsObj(tempObj)
   }
   
   return (
