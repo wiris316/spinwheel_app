@@ -115,8 +115,8 @@ const PieChart = () => {
               font: {
                 size: '18px'
               },
-              // textAlign:'center'
               rotation: 45,
+              // textAlign:'center'
               // display: 'auto',
               // anchor: 'end',
               // align: 'end',

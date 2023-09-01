@@ -17,12 +17,26 @@ import redArrow from "./assets/redArrow.png"
 
 
 function App() {
+
+  const { rotate, setRotate, spinButton, setSpinButton, result, setResult, data, emptyInput, setEmptyInput, fullWheel, shownInstructions, setShownInstructions} = useContext(StoreContext)
   
-  // const randomNum = Math.floor(Math.random() * (1000-500) + 500)
-
-  const { rotate, setRotate, spinButton, setSpinButton, result, setResult, data, emptyInput, setEmptyInput, fullWheel, shownInstructions, } = useContext(StoreContext)
-  // const [finishSpin, setFinishSpin] = useState(false)
-
+  function checkCookie() {
+      let temp = document.cookie.split('; ')
+      
+      for (let i = 0; i < temp.length; i++) {
+        let key = 'wheel-a-choice';
+        if (temp[i].split('=')[0] === key) {
+          setShownInstructions(false)
+        } else {
+          setTimeout(() => {
+            document.cookie = `wheel-a-choice=true`;
+          }, [5000])
+        }
+      }
+  }
+  
+  checkCookie();
+  
 
   
 
@@ -46,9 +60,6 @@ function App() {
           setRotate(!rotate)
           setSpinButton('spin')
           tempSpinButton.style.color = 'rgb(108, 105, 147)'
-  
-          // setFinishSpin(true)
-  
         }, randomTime);
         
       } else if (spinButton === ' . . . . ') {
@@ -60,7 +71,6 @@ function App() {
         tempSpinButton.style.color = 'red'
         setRotate(!rotate);
         
-        // setFinishSpin(!finishSpin)
       }
     } else {
       handleClickOpen()
@@ -70,19 +80,6 @@ function App() {
   }
   
 
-
-
-
-///////////////////////////////////////////
-////////// FOR TESTING PURPOSE ////////////
-//////////////////////////////////////////////
-
-// function getClickPosition(e) {
-//   var xPosition = e.clientX;
-//   var yPosition = e.clientY;
-
-//   console.log(xPosition, yPosition)
-// }
   
 const handleClickOpen = () => {
   setEmptyInput(true);
@@ -93,7 +90,7 @@ const handleClickOpen = () => {
   return (
     <>
       {shownInstructions && <InstructionMain /> }
-      <h1>Wheel-A-Choice</h1>
+      <h1>WHEEL-A-CHOICE</h1>
       <main>
         <section id="center">
           <Instruction1/>
@@ -114,7 +111,6 @@ const handleClickOpen = () => {
         </section>
         <section id="choice-list-section">
         {data.length? <ChoiceList /> : null}
-        {/* <button id="reset-button">Reset</button> */}
         <SuggestionBox/>
         </section>
         

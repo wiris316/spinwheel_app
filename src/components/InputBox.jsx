@@ -41,8 +41,8 @@ export default function InputBox() {
   return (
     <>
       <form>
-        <input name="ToDoBox" type='text' maxLength={12} placeholder='' onChange={handleInput} value={input}></input>
-        <button name="ToDoBox" onClick={handleSubmit} >Submit</button>
+        <input name="choice-box" type='text' maxLength={15} placeholder='' onChange={handleInput} value={input}></input>
+        <button name="choice-box" onClick={handleSubmit} >submit</button>
 
       </form>
       

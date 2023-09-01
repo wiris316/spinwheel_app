@@ -12,9 +12,7 @@ const ChoiceList = () => {
   // const [itemsObj, setItemsObj] = useState({})
   
   useEffect(() => {
-    console.log('in choiceList')
     if (selectedSuggestion == false) {
-      console.log('it is false')
       const promise1 = new Promise((resolve, reject) => { 
         resolve(data[data.length-1]);
       })
@@ -50,14 +48,11 @@ const ChoiceList = () => {
           if (list.length !== 0 && newList !== undefined) {
     
             for (let i = 0; i < list.length; i++) {
-              console.log('list',list)
               if (list[i].props.children.split(' ')[0] == newList.props.children.split(' ')[0]) {
                 // console.log('truthy')
                 list[i] = newList; 
                 setList(list)
-              } else if (list[i]) {
-                console.log('whats in here', list[i][0])
-              }
+              } 
   
             }
             // console.log('result',newList.props.children.split(' ')[0])
@@ -96,7 +91,7 @@ const ChoiceList = () => {
       <ul id="data-list">
         {list}
       </ul>
-      <button id="reset-button" onClick={handleReset} >Reset</button>
+      <button id="reset-button" onClick={handleReset} >reset</button>
       {reset && <ConfirmResetDialog />}
     </div>
     

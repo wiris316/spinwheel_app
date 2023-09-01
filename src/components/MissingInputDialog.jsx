@@ -40,7 +40,7 @@ const MissingInputDialog = () => {
         {"Missing Input:"} 
     </DialogTitle>
     <DialogContent>
-      <DialogContentText id="alert-dialog-description" fontSize="20px">
+      <DialogContentText id="alert-dialog-description" fontSize="18px">
         Please type in your input
       </DialogContentText>
     </DialogContent>

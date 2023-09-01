@@ -9,7 +9,7 @@ import { StoreContext } from '../utils/store';
 
 
 export default function ConfirmResetDialog() {
-  // const [open, setOpen] = React.useState(false);
+
   let tempSpinButton = document.getElementById('spin-button')
 
   const {reset, setReset, setData, setParts, setResult, setRotate, setSpinButton} = useContext(StoreContext)
@@ -31,9 +31,6 @@ export default function ConfirmResetDialog() {
 
   return (
     <div>
-      {/* <Button variant="outlined" onClick={handleClickOpen}>
-        Open alert dialog
-      </Button> */}
       <Dialog
         open={reset}
         onClose={handleClose}
@@ -45,7 +42,7 @@ export default function ConfirmResetDialog() {
         </DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-            Are you sure you want to reset and clear your inputs?
+            Are you sure you want to reset and clear your choices?
           </DialogContentText>
         </DialogContent>
         <DialogActions>

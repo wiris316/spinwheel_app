@@ -51,11 +51,14 @@ function SuggestionBox(props) {
     e.target.style.backgroundColor = 'rgb(108, 105, 147)'
     
   }
+
+  
   
   return (
     <>
       <div id="suggestion-box">
         {/* {suggestionTitle} */}
+        {titles}
         {items}
         <button className="select-suggestion-button" onClick={handleSelect} >select</button>
       </div>
