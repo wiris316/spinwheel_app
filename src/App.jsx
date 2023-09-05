@@ -2,6 +2,7 @@ import { useContext, useState, useEffect } from 'react'
 import './App.scss'
 import PieChart from './components/PieChart'
 import InputBox from './components/InputBox'
+import DarkModeToggle from './components/DarkModeToggle'
 import ResultBox from './components/ResultBox'
 import Animation from './components/Animation'
 import InstructionMain from './components/InstructionMain'
@@ -93,6 +94,7 @@ const handleClickOpen = () => {
       <h1>WHEEL-A-CHOICE</h1>
       <main>
         <section id="center">
+      <DarkModeToggle/>
           <Instruction1/>
           <InputBox />
           <div id="spin">
