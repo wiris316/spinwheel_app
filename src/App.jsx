@@ -94,7 +94,7 @@ const handleClickOpen = () => {
       <h1>WHEEL-A-CHOICE</h1>
       <main>
         <section id="center">
-      <DarkModeToggle/>
+        <DarkModeToggle/>
           <Instruction1/>
           <InputBox />
           <div id="spin">
