@@ -1,5 +1,5 @@
 $fontColor: rgb(108, 105, 147);
-
+$headerColor: rgb(89, 87, 118);
 
 #suggestion-box{
   border:solid;
@@ -16,7 +16,7 @@ $fontColor: rgb(108, 105, 147);
 
   h5{
     font-family:arial;
-    color: $fontColor;
+    color: $headerColor;
     text-align: center;
     margin:auto;
   }

@@ -6,6 +6,7 @@ $pieSlice:#f39396; //orange-red;
 
 body{
   background-color: $bgColor;
+  // background-color: rgba(232, 234, 239, 0.939);
   display:flex;
   justify-content: center;
   align-items: center;
@@ -60,7 +61,7 @@ main {
 
   #spin-button {
     position:absolute;
-    margin: 285px 0 20px 0;
+    margin: 280px 0 20px 0;
     justify-self: center;
     z-index: 2;
     font-size: 30px;
