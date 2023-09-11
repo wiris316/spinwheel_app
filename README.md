@@ -8,8 +8,8 @@ Do you have trouble making decisions? Wheel-A-Choice can help by randomizing you
 
 ##### Add your inputs OR select from pre-set suggestions
 <div id="demo" align="center">
-  <img width="500" alt="demo-gif1" src="https://github.com/wiris316/spinwheel_app/assets/124114572/c6796c76-98b0-4b6a-a9ef-8ed9ee79d4a3">
-  <img width="348" alt="demo-gif2" src="https://github.com/wiris316/spinwheel_app/assets/124114572/a2b832c1-ee10-448a-ac72-26476a207aa4">
+  <img width="450" alt="demo-gif1" src="https://github.com/wiris316/spinwheel_app/assets/124114572/c6796c76-98b0-4b6a-a9ef-8ed9ee79d4a3">
+  <img width="314" alt="demo-gif2" src="https://github.com/wiris316/spinwheel_app/assets/124114572/a2b832c1-ee10-448a-ac72-26476a207aa4">
 </div>
 
 ##### Toggle between dark mode and light mode
