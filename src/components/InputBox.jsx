@@ -1,8 +1,7 @@
-import React, { useState, useContext, useEffect } from 'react';
+import { useState, useContext } from 'react';
 import { StoreContext } from '../utils/store';
 import MissingInputDialog from './MissingInputDialog';
 import '../assets/InputBox.scss';
-// import {Dialog, DialogContent, DialogContentText, DialogTitle, DialogActions, Button} from '@mui/material';
 
 
 export default function InputBox() {
@@ -31,12 +30,9 @@ export default function InputBox() {
     }
   }
 
-
   const handleClickOpen = () => {
     setEmptyInput(true);
   };
-
-
   
   return (
     <>

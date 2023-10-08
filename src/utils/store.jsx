@@ -18,8 +18,6 @@ const StoreProvider = ({ children }) => {
   const [list, setList] = useState([])
   const [selectedSuggestion, setSelectedSuggestion] = useState(false)
 
-
-
   return (
     <StoreContext.Provider
       value={{

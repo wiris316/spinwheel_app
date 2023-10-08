@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import { StoreContext } from '../utils/store';
 import '../assets/ResultBox.scss'
 
@@ -11,16 +11,11 @@ function ResultBox() {
   let items = 1; 
   
   useEffect(() => {
-    // console.log('resultObj',resultObj)
-    // console.log('tempDegree', tempDegree)
   }, [result])
   
-
   for (let i = data.length-1; i >= 0; i--) {
-    // resultObj[`${ data[i] } `] = Math.floor(sliceDegree * (items--))
     resultObj.set(`${data[i]}_${i}`, Math.floor(sliceDegree * (items++)))
   }
-
 
   for (const [key, value] of resultObj.entries()) {
     if (tempDegree === 0 || tempDegree == value) {
@@ -32,7 +27,6 @@ function ResultBox() {
       break;
     } 
   }
-
 
   return (
     <>

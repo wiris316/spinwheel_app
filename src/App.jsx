@@ -1,6 +1,5 @@
-import { useContext, useState, useEffect } from 'react'
+import { useContext } from 'react'
 import './App.scss'
-import PieChart from './components/PieChart'
 import InputBox from './components/InputBox'
 import DarkModeToggle from './components/DarkModeToggle'
 import ResultBox from './components/ResultBox'
@@ -13,7 +12,6 @@ import FullWheelDialog from './components/FullWheelDialog'
 import ChoiceList from './components/ChoiceList'
 import SuggestionBox from './components/SuggestionBank'
 import { StoreContext } from './utils/store'
-import { motion } from "framer-motion"
 import redArrow from "./assets/redArrow.png"
 
 
@@ -43,17 +41,12 @@ function App() {
 
 
   const handleSpin = () => {
-
     // when users click 'stop', spin random millisec before stop
-    
     if (data.length) {
-      
       let tempSpinButton = document.getElementById('spin-button')
-      
+
       if (spinButton === 'stop') {
-        
         setSpinButton(' . . . . ')
-        
         const randomTime = Math.floor(Math.random() * (1000 - 200) + 1000)
         
         setTimeout(() => {
@@ -76,18 +69,12 @@ function App() {
     } else {
       handleClickOpen()
     }
-    
-  
   }
   
-
+  const handleClickOpen = () => {
+    setEmptyInput(true);
+  };
   
-const handleClickOpen = () => {
-  setEmptyInput(true);
-};
-
-  
-
   return (
     <>
       {shownInstructions && <InstructionMain /> }
@@ -101,7 +88,7 @@ const handleClickOpen = () => {
             <button id="spin-button" onClick={handleSpin} >{spinButton}</button>
           </div>
 
-          <div id="arrow-button" /*ref={arrowClick} onClick={getClickPosition} */>
+          <div id="arrow-button">
             <img src={redArrow} alt="arrow"/>
           </div>
 

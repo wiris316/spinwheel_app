@@ -1,5 +1,3 @@
-import React, { useState, useContext, useEffect } from 'react';
-import { StoreContext } from '../utils/store';
 import '../assets/Instruction.scss'
 
 const Instruction2 = () => {
@@ -10,9 +8,7 @@ const Instruction2 = () => {
     <>
       <p> {instructions} </p>
     </>
-
   )
-  
 }
 
 export default Instruction2
