@@ -5,11 +5,10 @@ import ConfirmResetDialog from './ConfirmResetDialog';
 
 const ChoiceList = () => {
   
-  const { data, reset, setReset, itemsObj, setItemsObj, /*list, setList,*/ selectedSuggestion, setSelectedSuggestion } = useContext(StoreContext)
+  const { data, reset, setReset, itemsObj, setItemsObj, selectedSuggestion, setSelectedSuggestion } = useContext(StoreContext)
 
   const [added, setAdded] = useState(false)
   const [list, setList] = useState([])
-  // const [itemsObj, setItemsObj] = useState({})
   
   useEffect(() => {
     if (selectedSuggestion == false) {
@@ -20,13 +19,11 @@ const ChoiceList = () => {
       promise1
       .then((value) => {
         if (!itemsObj[value]) {
-            // console.log('first time added')
             itemsObj[value] = 1;
             setItemsObj(itemsObj)
             setAdded(true)
             return ([value, itemsObj[value]])
         } else if (itemsObj[value] && added) {
-          // console.log('second time added')
             let newObj = itemsObj;
             newObj[value]++;
             setItemsObj(newObj);
@@ -49,40 +46,27 @@ const ChoiceList = () => {
     
             for (let i = 0; i < list.length; i++) {
               if (list[i].props.children.split(' ')[0] == newList.props.children.split(' ')[0]) {
-                // console.log('truthy')
                 list[i] = newList; 
                 setList(list)
               } 
-  
             }
-            // console.log('result',newList.props.children.split(' ')[0])
-  
           }
           
         })
     } else if (selectedSuggestion == true) {
       let newList = [];
       for (const [key, vals] of Object.entries(itemsObj)) {
-        // console.log('itemsObj',itemsObj)
         newList.push(<li>{`${key} : ${vals}`}</li>)
       }
       setList(newList)
       setAdded(true)
       setSelectedSuggestion(false)
-    }
-    
-    // console.log('list', list)
+    }    
   }, [data])
-
-
-  // console.log('seelist heree', list)
 
   const handleReset = () => {
     setReset(true)
-    // setData([])
-    // setParts([])
   }
-
 
   return (
     <div id= "choice-list">
@@ -94,9 +78,7 @@ const ChoiceList = () => {
       <button id="reset-button" onClick={handleReset} >reset</button>
       {reset && <ConfirmResetDialog />}
     </div>
-    
   )
-  
 }
 
 export default ChoiceList;

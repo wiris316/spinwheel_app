@@ -1,5 +1,3 @@
-import React, { useState, useContext, useEffect } from 'react';
-import { StoreContext } from '../utils/store';
 import SuggestionBox from './SuggestionBox'
 import '../assets/SuggestionBank.scss'
 
@@ -12,10 +10,7 @@ function SuggestionBank() {
   const suggestions = [cuisine, chores, exercise]
   const titles = ['CUISINES', 'CHORES', 'EXERCISES']
   
-
-
   const suggestionList = suggestions.map((list, i) => <SuggestionBox value={list} titles={<h5>{titles[i]}</h5>} key={i} />)
-
 
   return (
     <div id="suggestion-bank">

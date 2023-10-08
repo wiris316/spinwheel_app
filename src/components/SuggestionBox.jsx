@@ -1,19 +1,16 @@
-import React, { useState, useContext, useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import { StoreContext } from '../utils/store';
 import '../assets/SuggestionBox.scss'
 
 function SuggestionBox(props) {
   
-  const { reset, setData, data, parts, setParts, itemsObj, setItemsObj, tempDegree, setTempDegree, selectedSuggestion, setSelectedSuggestion } = useContext(StoreContext)
+  const { setData, data, setParts, setItemsObj, setTempDegree, setSelectedSuggestion } = useContext(StoreContext)
   const { value, titles } = props;
 
-
   useEffect(() => {
-
     if (data.length == 0) {
       switchSelectDefault();
     }
-    
   }, [data])
   
   const items = value.map((ele) => <p>{ele}</p>)
@@ -27,11 +24,9 @@ function SuggestionBox(props) {
     }
   }
 
-  
   const handleSelect = (e) => {
     switchSelectDefault();
     setData(value)
-    // setClicked(!clicked)
     let tempParts = [];
     let tempObj = {};
     value.forEach((ele) => {
@@ -49,15 +44,11 @@ function SuggestionBox(props) {
     e.target.innerHTML = 'selected'
     e.target.style.color = 'white'
     e.target.style.backgroundColor = 'rgb(108, 105, 147)'
-    
   }
 
-  
-  
   return (
     <>
       <div id="suggestion-box">
-        {/* {suggestionTitle} */}
         {titles}
         {items}
         <button className="select-suggestion-button" onClick={handleSelect} >select</button>

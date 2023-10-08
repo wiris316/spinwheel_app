@@ -14,7 +14,6 @@ export default function ConfirmResetDialog() {
 
   const {reset, setReset, setData, setParts, setResult, setRotate, setSpinButton} = useContext(StoreContext)
 
-
   const handleClose = () => {
     setReset(false)
   }

@@ -7,7 +7,6 @@ $headerColor: rgb(89, 87, 118);
   border-radius: 20px;
   width:110px;
   margin: 0 5px 0 5px;
-  // display:flex;
 
   p{
     margin: 5px;
@@ -25,12 +24,10 @@ $headerColor: rgb(89, 87, 118);
     margin-top: 8px;
     background-color: white;
     border:solid;
-    // border-color:$fontColor;
     border-radius: 20px;
     font-size: 16px;
     color: $fontColor;
     width:100%;
     height: 30px;
-    // box-shadow: none;
   }
 }
