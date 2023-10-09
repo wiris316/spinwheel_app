@@ -36,10 +36,6 @@ function App() {
   
   checkCookie();
   
-
-  
-
-
   const handleSpin = () => {
     // when users click 'stop', spin random millisec before stop
     if (data.length) {
