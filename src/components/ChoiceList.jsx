@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { StoreContext } from '../utils/store';
 import '../assets/ChoiceList.scss'
 import ConfirmResetDialog from './ConfirmResetDialog';
